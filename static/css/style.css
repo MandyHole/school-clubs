@@ -11,12 +11,22 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 500px;
+    height: 60vh;
+}
+
+.navbar-background {
+    background-color: rgba(255, 255, 255, 0.0);
+    background-image: none;
+    border: none;
+    box-shadow: none;
 }
 
 .navbar-transparency {
     background-color: rgba(255, 255, 255, 0.8);
-    margin-right: -32px;
+    display: inline-block;
+    float: right;
+    margin-right: -30px;
+    padding-right: 3%;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -29,10 +39,9 @@ h2 {
     color: #575756;
 }
 
-.nav-height{
+/* .nav-height{
     min-height: 75px;
-    background-color: transparent !important;
-}
+} */
 
 .navy-background {
 
@@ -58,4 +67,10 @@ h2 {
     background-color: #003e6b;
     color: #fff;
     background-image: none;
+}
+
+.logo {
+    width: 150px;
+    height: 85px;
+    margin-left: 15px;
 }
