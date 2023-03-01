@@ -1,0 +1,61 @@
+body {
+    font-family: 'Quattrocento', serif;
+}
+h2 {
+    font-family: 'Quattrocento', serif;
+    color: red;
+}
+
+.hero {
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1675776733/sample.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+.navbar-transparency {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-right: -32px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-family: 'Quattrocento', serif;
+    font-weight: 700;
+    color: #003e6b;
+    font-size: 1.8rem;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #575756;
+}
+
+.nav-height{
+    min-height: 75px;
+    background-color: transparent !important;
+}
+
+.navy-background {
+
+    padding: 3%;
+    height: 100%;
+    margin-top: -24px;
+
+}
+/* .hero-height {
+    position: relative;
+    height: 100%;
+} */
+
+.large-text {
+    font-size: 8rem;
+}
+
+.white-text {
+    color: white;
+    text-shadow: 1px 1px #575756;
+}
+.navy-btn {
+    background-color: #003e6b;
+    color: #fff;
+    background-image: none;
+}
