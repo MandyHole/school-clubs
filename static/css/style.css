@@ -1,17 +1,20 @@
 body {
     font-family: 'Quattrocento', serif;
 }
+
 h2 {
     font-family: 'Quattrocento', serif;
-    color: red;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
 }
 
 .hero {
-    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1675776733/sample.jpg);
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1677845926/pancakes_wdqqib.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
+    height: 68vh;
 }
 
 .navbar-background {
@@ -35,6 +38,7 @@ h2 {
     color: #003e6b;
     font-size: 1.8rem;
 }
+
 .navbar-default .navbar-nav>li>a:hover {
     color: #575756;
 }
@@ -43,34 +47,92 @@ h2 {
     min-height: 75px;
 } */
 
-.navy-background {
+.hero-text-position {
 
     padding: 3%;
     height: 100%;
     margin-top: -24px;
 
 }
+
 /* .hero-height {
     position: relative;
     height: 100%;
 } */
 
 .large-text {
-    font-size: 8rem;
+    font-size: 7rem;
+    text-align: center;
 }
 
 .white-text {
     color: white;
     text-shadow: 1px 1px #575756;
 }
+
 .navy-btn {
     background-color: #003e6b;
     color: #fff;
     background-image: none;
+    margin-top: 15px;
+    text-shadow: none;
+}
+
+.gold-btn {
+    background-color: #be9f56;
+    color: #000;
+    background-image: none;
+    margin-top: 15px;
+    text-shadow: none;
+
 }
 
 .logo {
     width: 150px;
     height: 85px;
     margin-left: 15px;
+}
+
+.footer {
+    background-color: #003e6b;
+    color: #fff;
+    padding: 1%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    margin-top: 100px;
+}
+
+.box-heading-background {
+    width: 100%;
+    background-color: #003e6b;
+    padding: 1%;
+    /* margin: 15px 15px 0 15px; */
+}
+
+.gold-background {
+    background-color: #be9f56;
+    padding-bottom: 100px;
+    padding-top: 25px;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.box-body-background {
+    background-color: #56a0d8;
+    color: #000;
+    /* margin-bottom: 15px; */
+    width: 100%;
+    padding: 4%;
+}
+
+.box-body-background > p {
+    text-align: center;
+    font-size: 2rem;
 }
