@@ -1,3 +1,5 @@
+/* html elements */
+
 body {
     font-family: 'Quattrocento', serif;
 }
@@ -9,12 +11,28 @@ h2 {
     text-align: center;
 }
 
+/* hero styles */
+
 .hero {
     background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1677845926/pancakes_wdqqib.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 68vh;
+}
+
+.hero-text-position {
+    padding: 3%;
+    height: 100%;
+    margin-top: -24px;
+}
+
+/* navigation styles */
+
+.logo {
+    width: 150px;
+    height: 85px;
+    margin-left: 15px;
 }
 
 .navbar-background {
@@ -43,23 +61,6 @@ h2 {
     color: #575756;
 }
 
-/* .nav-height{
-    min-height: 75px;
-} */
-
-.hero-text-position {
-
-    padding: 3%;
-    height: 100%;
-    margin-top: -24px;
-
-}
-
-/* .hero-height {
-    position: relative;
-    height: 100%;
-} */
-
 .large-text {
     font-size: 7rem;
     text-align: center;
@@ -70,11 +71,12 @@ h2 {
     text-shadow: 1px 1px #575756;
 }
 
+/* button styles */
+
 .navy-btn {
     background-color: #003e6b;
     color: #fff;
     background-image: none;
-    margin-top: 15px;
     text-shadow: none;
 }
 
@@ -82,16 +84,14 @@ h2 {
     background-color: #be9f56;
     color: #000;
     background-image: none;
-    margin-top: 15px;
     text-shadow: none;
-
 }
 
-.logo {
-    width: 150px;
-    height: 85px;
-    margin-left: 15px;
+.btn-margin {
+    margin-top: 15px;
 }
+
+/* footer styles */
 
 .footer {
     background-color: #003e6b;
@@ -105,11 +105,32 @@ h2 {
 }
 
 .box-heading-background {
-    width: 100%;
     background-color: #003e6b;
     padding: 1%;
-    /* margin: 15px 15px 0 15px; */
+    color: #fff;
 }
+.box-heading-background >p > a {
+    color:antiquewhite;
+    text-decoration: underline;
+}
+
+.box-heading-background > form > a {
+    color:antiquewhite;
+    text-decoration: underline;
+}
+.box-heading-background >p > a:hover {
+    color:#fff;
+    text-decoration: underline;
+}
+
+.box-heading-background > form > a:hover {
+    color:#fff;
+    text-decoration: underline;
+}
+
+/* .box-heading-background > form > button {
+    color: #003e6b;
+} */
 
 .gold-background {
     background-color: #be9f56;
@@ -125,7 +146,6 @@ h2 {
 .box-body-background {
     background-color: #56a0d8;
     color: #000;
-    /* margin-bottom: 15px; */
     width: 100%;
     padding: 4%;
 }
