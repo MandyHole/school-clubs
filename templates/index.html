@@ -108,20 +108,20 @@
         <h1 class="white-text large-text">Join our Breakfast and Supper Club</h1>
 
         {% if user.is_authenticated %}
-        <div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
+        <div class="hide-element-mobile"><div class="col-md-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
             role="button">Make a booking</a>
-        </div>
-        <div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin" href="/accounts/login"
+        </div></div>
+        <div class="hide-element-mobile"><div class="col-md-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin" href="/accounts/login"
             role="button">Manage bookings</a>
-        </div>
+        </div></div>
 
         {% else %}
-        <div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
+        <div class="hide-element-mobile"></div><div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
             role="button">Sign Up</a>
-        </div>
-        <div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin" href="/accounts/login"
+        </div></div>
+        <div class="hide-element-mobile"></div><div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin" href="/accounts/login"
             role="button">Login</a>
-        </div>
+        </div></div>
 
         {% endif %}
 
@@ -145,21 +145,21 @@
         <div class="row box-body-background">
 
           {% if user.is_authenticated %}
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
               role="button">Make a
               Booking</a>
           </div>
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
               role="button">Manage
               Bookings</a>
           </div>
 
           {% else %}
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
               role="button">Sign
               Up</a>
           </div>
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
               role="button">Login</a>
           </div>
 
@@ -180,21 +180,21 @@
         </div>
         <div class="row box-body-background">
           {% if user.is_authenticated %}
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
               role="button">Make a
               Booking</a>
           </div>
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
               role="button">Manage
               Bookings</a>
           </div>
 
           {% else %}
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
               role="button">Sign
               Up</a>
           </div>
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
               role="button">Login</a>
           </div>
 

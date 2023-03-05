@@ -1,10 +1,18 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
+<div class="row hero-height">
+  <div class="col-xs-12 col-lg-8 col-lg-offset-2 hero-text-position">
+    <h1 class="white-text large-text">Sign up to book</h1>
+  </div>
+</div>
+</div>
+<div class="row gold-background">
+  <div class="col-md-4 col-md-offset-4 box-heading-background">
 <h1>{% trans "Sign Out" %}</h1>
 
 <p>{% trans 'Are you sure you want to sign out?' %}</p>
@@ -14,8 +22,8 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
+  <button type="submit" class=" btn btn-default btn-lg gold-btn btn-block btn-margin">{% trans 'Sign Out' %}</button>
 </form>
-
+</div></div>
 
 {% endblock %}
