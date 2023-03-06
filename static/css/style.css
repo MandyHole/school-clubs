@@ -9,6 +9,7 @@ h2 {
     font-weight: 700;
     color: #fff;
     text-align: center;
+    margin-bottom: 0;
 }
 
 input{
@@ -18,6 +19,14 @@ input{
 
 .hero {
     background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1677845926/pancakes_wdqqib.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 68vh;
+}
+
+.hero-admin {
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1678138549/pexels-lukas-13522702_maosc3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -97,6 +106,11 @@ input{
     margin-top: 15px;
 }
 
+.accordian-btn{
+    width: 100%;
+    background: #003e6b;
+}
+
 /* footer styles */
 
 .footer {
@@ -115,6 +129,7 @@ input{
     padding: 1%;
     color: #fff;
 }
+
 .box-heading-background >p > a {
     color:antiquewhite;
     text-decoration: underline;
@@ -166,3 +181,11 @@ input{
         display: none;
     }
   }
+
+.accordian-item > h2 {
+    margin: 0;
+  }
+
+.login-notice > h2 {
+    color: black;
+}

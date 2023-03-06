@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pupils.views import get_homepage
+from pupils.views import get_homepage, get_admin_page
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_homepage, name = 'get_homepage'),
-    path('accounts/', include('allauth.urls'))
+    path('', get_homepage, name='get_homepage'),
+    path('accounts/', include('allauth.urls')),
+    path('admin_page/', get_admin_page, name='get_admin_page')
 ]
 urlpatterns += staticfiles_urlpatterns()
