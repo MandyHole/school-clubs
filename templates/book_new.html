@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block hero%} <div class="hero">{% endblock %}
+
+{% block content %}
+      <div class="col-xs-12 col-lg-8 col-lg-offset-2 hero-text-position">
+        {% if user.is_authenticated %}
+        <h1 class="white-text large-text">Book Now</h1>
+        {% else %}
+        <h1 class="white-text large-text">Please login or sign up for an account to book</h1>
+        <div class="hide-element-mobile"><div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
+            role="button">Sign Up</a>
+        </div></div>
+        <div class="hide-element-mobile"><div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin" href="/accounts/login"
+            role="button">Login</a>
+        </div></div>
+
+        {% endif %}
+
+      </div></div>
+      <div class="gold-background">
+      {% if user.is_authenticated %}
+
+  <div class="row gold-background">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-6">
+        <div class="box-heading-background">
+          <h2>About Breakfast Club</h2>
+        </div>
+        <div class="row">
+          <div class="box-body-background">
+            <p><em>Individual and block bookings are available.</em></p>
+            <p><strong>Starting Time:</strong> 7.45am</p>
+            <p><strong>Cost:</strong> £2/child/day</p>
+          </div>
+        </div>
+        <div class="row box-body-background">
+
+      
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="box-heading-background">
+          <h2>About Supper Club</h2>
+        </div>
+        <div class="row">
+          <div class="box-body-background">
+            <p><em>Individual and block bookings are available.</em></p>
+            <p><strong>Collection Time:</strong> 6.00pm</p>
+            <p><strong>Cost:</strong> £2.50/child/day</p>
+          </div>
+        </div>
+        <div class="row box-body-background">
+       
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %} 

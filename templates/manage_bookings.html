@@ -4,17 +4,17 @@
 
   {% block content %}
   <div class="col-xs-12 col-lg-8 col-lg-offset-2 hero-text-position">
-    {% if user.is_superuser %}
-    <h1 class="white-text large-text">Admin Page</h1>
+    {% if user.is_authenticated %}
+    <h1 class="white-text large-text">Manage your existing bookings</h1>
     {% else %}
-    <h1 class="white-text large-text">You must be an admin to access this page.</h1>
+    <h1 class="white-text large-text">You must be logged in to access this page.</h1>
     {% endif %}
 </div>
 </div>
 </div>
 <div class="gold-background">
   <div class="row">
-    {% if user.is_superuser %}
+    {% if user.is_authenticated%}
     <div class="col-md-6">
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
