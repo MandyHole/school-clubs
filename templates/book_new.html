@@ -3,21 +3,30 @@
 {% block hero%} <div class="hero">{% endblock %}
 
 {% block content %}
-      <div class="col-xs-12 col-lg-8 col-lg-offset-2 hero-text-position">
-        {% if user.is_authenticated %}
-        <h1 class="white-text large-text">Book Now</h1>
-        {% else %}
-        <h1 class="white-text large-text">Please login or sign up for an account to book</h1>
-        <div class="hide-element-mobile"><div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
-            role="button">Sign Up</a>
-        </div></div>
-        <div class="hide-element-mobile"><div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin" href="/accounts/login"
-            role="button">Login</a>
-        </div></div>
 
-        {% endif %}
+<div class="container">
+  <div class="row">
+    <div class="col hero-text-position">
+      {% if user.is_authenticated %}
+      <h1 class="white-text large-text">Book now</h1>
+      {% else %}
+      <h1 class="white-text large-text">Please login or sign up to book</h1>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <a class="btn gold-btn" role="button" href="{% url 'account_signup' %}">Sign
+            Up</a>
 
-      </div></div>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <a class="btn navy-btn" role="button"
+            href="{% url 'account_login' %}">Login</a>
+
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+
       <div class="gold-background">
       {% if user.is_authenticated %}
 

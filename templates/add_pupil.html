@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block hero%} <div class="hero-logout">{% endblock %}
+
+  {% block content %}
+  {% load crispy_forms_tags %}
+  <div class="container">
+    <div class="row">
+      <div class="col hero-text-position">
+        {% if user.is_authenticated %}
+        <div class="col-md-6 offset-md-3 box-heading-background">
+          <h1 class="white-text center-align-text">Add a Pupil</h1>
+          <!-- <form method="POST" action="/manage_bookings/">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <p>
+                    <button type="submit">Add Item</button>
+                </p>
+            </div>
+        </form> -->
+        <form method="post">
+          <!-- | crispy  -->
+          {{ add_pupil_form | crispy }}
+          {% csrf_token %}
+          
+          <button type="submit" class="btn gold-btn btn-lg">Submit</button>
+      </form>
+          <!-- <form method="POST" action="add_pupil">
+            {% csrf_token %}
+            <legend>Pupil Details</legend>
+            <label for="pupil_first_name">First Name</label>
+            <input type="text" id="pupil_first_name" name="pupil_first_name" required><br>
+            <label for="pupil_surname">Surname</label>
+            <input type="text" id="pupil_surname" name="pupil_surname" required><br>
+            <input type="radio" id="reception" name="pupil_year_group" value="Reception">
+            <label for="reception">Reception</label><br>
+            <input type="radio" id="year_1" name="pupil_year_group" value="Year 1">
+            <label for="year_1">Year 1</label><br>
+            <input type="radio" id="year_2" name="pupil_year_group" value="Year 2">
+            <label for="year_2">Year 2</label><br>
+            <input type="radio" id="year_3" name="pupil_year_group" value="Year 3">
+            <label for="year_3">Year 3</label><br>
+            <input type="radio" id="year_4" name="pupil_year_group" value="Year 4">
+            <label for="year_4">Year 4</label><br>
+            <input type="radio" id="year_5" name="pupil_year_group" value="Year 5">
+            <label for="year_5">Year 5</label><br>
+            <input type="radio" id="year_6" name="pupil_year_group" value="Year 6">
+            <label for="year_6">Year 6</label><br>
+            <button type="submit" class="btn gold-btn btn-lg">Save Pupil Details</button>
+          </form> -->
+
+
+
+          {% else %}
+          <h1 class="white-text large-text">Login to add a pupil</h1>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

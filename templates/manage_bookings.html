@@ -1,41 +1,82 @@
 {% extends "base.html" %}
 
-{% block hero%} <div class="hero-admin">{% endblock %}
+{% block hero %}
+<div class="hero-admin">
+
+  {% endblock %}
 
   {% block content %}
-  <div class="col-xs-12 col-lg-8 col-lg-offset-2 hero-text-position">
-    {% if user.is_authenticated %}
-    <h1 class="white-text large-text">Manage your existing bookings</h1>
-    {% else %}
-    <h1 class="white-text large-text">You must be logged in to access this page.</h1>
-    {% endif %}
-</div>
-</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col hero-text-position">
+        {% if user.is_authenticated %}
+        <h1 class="white-text large-text">Manage your existing bookings</h1>
+        {% else %}
+        <h1 class="white-text large-text">Please login to see this page</h1>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
+
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 </div>
 <div class="gold-background">
   <div class="row">
     {% if user.is_authenticated%}
+
+    {% for pupil in pupils %}
     <div class="col-md-6">
-      <div class="accordion" id="accordionExample">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ pupil.first_name_of_pupil }} {{ pupil.surname_of_pupil }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ pupil.year_gp }}</h6>
+        
+          
+
+
+          <p class="card-text">info
+
+            </p>
+          <!-- <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a> -->
+        </div>
+      </div>
+    </div>{% endfor %}
+    <!-- <div class="accordion" id="{{ pupil }}-accordion">
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
+          <h2 class="accordion-header" id="{{ pupil }}-heading">
             <button class="accordion-button accordian-btn" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Accordion Item #1
+              data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              {{ pupil.first_name_of_pupil }} {{ pupil.surname_of_pupil }}, {{ pupil.year_gp }}
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
             data-bs-parent="#accordionExample">
             <div class="accordion-body box-body-background">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
-              plugin adds the appropriate classes that we use to style each element. These classes control the overall
-              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
-              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-              <code>.accordion-body</code>, though the transition does limit overflow.
+              {% for parent in parents %}
+
+              {{ parent.parent_fname }} {{ parent.surname }}: {{ parent.contact_no}} /
+
+              {% endfor %}
+
+              {% for user in users %}
+              {{ user.email }}
+
+              {% endfor %}
+
+
+
+
             </div>
           </div>
         </div>
-        <div class="accordion-item">
+      </div>
+
+ <div class="accordion-item">
           <h2 class="accordion-header" id="headingTwo">
             <button class="accordion-button  accordian-btn collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -70,13 +111,13 @@
               <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
           </div>
-        </div>
-      </div>{% endif %}
-    </div>
-    </div>
+        </div> -->
+    {% endif %}
+    <!-- </div>
   </div>
 </div>
-<!-- <div class="col-xs-12 col-lg-8 col-lg-offset-2 hero-text-position">
+</div> -->
+    <!-- <div class="col-xs-12 col-lg-8 col-lg-offset-2 hero-text-position">
         {% if user.is_authenticated %}
         <h1 class="white-text large-text">Welcome</h1>
         <div class="hide-element-mobile"><div class="col-md-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
@@ -175,4 +216,4 @@
       </div>
     </div>
   </div> -->
-{% endblock %}
+    {% endblock %}

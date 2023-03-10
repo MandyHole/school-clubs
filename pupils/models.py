@@ -28,7 +28,8 @@ class Pupil(models.Model):
     first_name_of_pupil = models.CharField(
         max_length=25, null=False, blank=False)
     surname_of_pupil = models.CharField(max_length=25, null=False, blank=False)
-    year_gp = models.CharField(max_length=1, choices=YEAR_GROUPS)
+    year_gp = models.CharField(
+        max_length=1, choices=YEAR_GROUPS, verbose_name="Year group")
 
     def __str__(self):
         return f'{self.first_name_of_pupil} {self.surname_of_pupil}: {self.year_gp}'
@@ -47,7 +48,8 @@ class Breakfast(models.Model):
             if (self.breakfast_start_date, self.breakfast_start_date) in self.breakfast_option:
                 return self.breakfast_option
             else:
-                option.append(self.breakfast_start_date, self.breakfast_start_date)
+                option.append(
+                    self.breakfast_start_date, self.breakfast_start_date)
                 return self.breakfast_option
 
         if self.breakfast_end_date.weekday() < 5:
