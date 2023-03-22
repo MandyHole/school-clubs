@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="hide-element-mobile"><a class="btn navy-btn" role="button" href="{% url 'new_booking' %}">Manage
+          <div class="hide-element-mobile"><a class="btn navy-btn" role="button" href="{% url 'get_manage_booking' %}">Manage
               bookings</a>
           </div>
         </div>
@@ -75,12 +75,11 @@
         <div class="row box-body-background">
 
           {% if user.is_authenticated %}
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'account_signup' %}"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'new_booking' %}"
               role="button">Make a
               Booking</a>
           </div>
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
-              role="button">Manage
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'get_manage_booking' %}">Manage
               Bookings</a>
           </div>
 
@@ -110,11 +109,11 @@
         </div>
         <div class="row box-body-background">
           {% if user.is_authenticated %}
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'account_signup' %}"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'new_booking' %}"
               role="button">Make a
               Booking</a>
           </div>
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'get_manage_booking' %}"
               role="button">Manage
               Bookings</a>
           </div>

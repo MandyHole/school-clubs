@@ -6,12 +6,15 @@
   {% endblock %}
 
   {% block content %}
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
   <div class="container">
     <div class="row">
       <div class="col hero-text-position">
         {% if user.is_authenticated %}
-        <h1 class="white-text large-text">Manage your existing bookings</h1>
+        <h1 class="white-text large-text">Manage your bookings and details</h1>
         {% else %}
         <h1 class="white-text large-text">Please login to see this page</h1>
 
@@ -27,193 +30,72 @@
 <div class="gold-background">
   <div class="row">
     {% if user.is_authenticated%}
-
-    {% for pupil in pupils %}
-    <div class="col-md-6">
-      <div class="card" style="width: 18rem;">
+    <div class="col-md-6 box-heading-background">
+      <h2>Parent/Guardian details</h2>
+      {% for parent in parents %}
+      {% if parent.user_info.pk == user.pk %}
+      <div class="card box-body-background">
         <div class="card-body">
-          <h5 class="card-title">{{ pupil.first_name_of_pupil }} {{ pupil.surname_of_pupil }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ pupil.year_gp }}</h6>
-        
-          
+          <h5 class="card-title">{{ parent.parent_fname }}
+            {{ parent.parent_surname }}</h5>
+          <h6 class="card-subtitle mb-2">{{ parent.contact_no }} /
+            {{ parent.parent_email }}</h6>
+          <p class="card-text"> <a href="/amend_parent/{{ parent.id }}">
+              <button class="navy-btn">Edit your details</button>
+          </p></a>
+        </div>
+      </div>{% endif %} {% endfor %}
+    </div>
 
-
-          <p class="card-text">info
-
+    <div class="col-md-6 box-heading-background">
+      <h2>Child details</h2>
+      {% for pupil in pupils %}
+      {% if pupil.user_info.pk == user.pk %}
+      <div class="col-md-12">
+        <div class="card box-body-background">
+          <div class="card-body">
+            <h5 class="card-title">{{ pupil.first_name_of_pupil }} {{ pupil.surname_of_pupil }}</h5>
+            <h6 class="card-subtitle mb-2">Year Group: {{ pupil.year_gp }}</h6>
+            <p class="card-text"> <a href="/amend_pupil/{{ pupil.id }}">
+                <button class="navy-btn">Edit pupil details</button>
+              </a><a  href="#myModal" class="trigger-btn" data-toggle="modal" >
+                <button class="navy-btn">Delete</button> 
+              </a>
             </p>
-          <!-- <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a> -->
-        </div>
-      </div>
-    </div>{% endfor %}
-    <!-- <div class="accordion" id="{{ pupil }}-accordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="{{ pupil }}-heading">
-            <button class="accordion-button accordian-btn" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              {{ pupil.first_name_of_pupil }} {{ pupil.surname_of_pupil }}, {{ pupil.year_gp }}
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body box-body-background">
-              {% for parent in parents %}
-
-              {{ parent.parent_fname }} {{ parent.surname }}: {{ parent.contact_no}} /
-
-              {% endfor %}
-
-              {% for user in users %}
-              {{ user.email }}
-
-              {% endfor %}
-
-
-
-
-            </div>
           </div>
         </div>
       </div>
-
- <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button  accordian-btn collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Accordion Item #2
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body box-body-background">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
-              plugin adds the appropriate classes that we use to style each element. These classes control the overall
-              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
-              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-              <code>.accordion-body</code>, though the transition does limit overflow.
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header flex-column">
+              <div class="icon-box">
+                <i class="fa-solid fa-x"></i>
+              </div>						
+              <h4 class="modal-title w-100">Are you sure?</h4>	
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Do you really want to delete these records? This process cannot be undone.</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <a href="/delete_pupil/{{ pupil.id }}"><button type="button" class="btn btn-danger" >Delete</button></a>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button  accordian-btn collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Accordion Item #3
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body box-body-background">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
-              plugin adds the appropriate classes that we use to style each element. These classes control the overall
-              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
-              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-              <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div> -->
-    {% endif %}
-    <!-- </div>
+      </div>    
+      
+      {% endif %} {% endfor %}
+    </div>
   </div>
+
+  {% endif %}
 </div>
-</div> -->
-    <!-- <div class="col-xs-12 col-lg-8 col-lg-offset-2 hero-text-position">
-        {% if user.is_authenticated %}
-        <h1 class="white-text large-text">Welcome</h1>
-        <div class="hide-element-mobile"><div class="col-md-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
-            role="button">Make a booking</a>
-        </div></div>
-        <div class="hide-element-mobile"><div class="col-md-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin" href="/accounts/login"
-            role="button">Manage bookings</a>
-        </div></div>
-
-        {% else %}
-        <h1 class="white-text large-text">Join our Breakfast and Supper Club</h1>
-        <div class="hide-element-mobile"><div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin" href="/accounts/signup"
-            role="button">Sign Up</a>
-        </div></div>
-        <div class="hide-element-mobile"><div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin" href="/accounts/login"
-            role="button">Login</a>
-        </div></div>
-
-        {% endif %}
-
-      </div>
-      <div class="col-md-6"></div>
-    </div>
-  </div>
-  <div class="row gold-background">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="col-md-6">
-        <div class="box-heading-background">
-          <h2>About Breakfast Club</h2>
-        </div>
-        <div class="row">
-          <div class="box-body-background">
-            <p><em>Individual and block bookings are available.</em></p>
-            <p><strong>Starting Time:</strong> 7.45am</p>
-            <p><strong>Cost:</strong> £2/child/day</p>
-          </div>
-        </div>
-        <div class="row box-body-background">
-
-          {% if user.is_authenticated %}
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
-              role="button">Make a
-              Booking</a>
-          </div>
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
-              role="button">Manage
-              Bookings</a>
-          </div>
-
-          {% else %}
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
-              role="button">Sign
-              Up</a>
-          </div>
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
-              role="button">Login</a>
-          </div>
-
-          {% endif %}
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="box-heading-background">
-          <h2>About Supper Club</h2>
-        </div>
-        <div class="row">
-          <div class="box-body-background">
-            <p><em>Individual and block bookings are available.</em></p>
-            <p><strong>Collection Time:</strong> 6.00pm</p>
-            <p><strong>Cost:</strong> £2.50/child/day</p>
-          </div>
-        </div>
-        <div class="row box-body-background">
-          {% if user.is_authenticated %}
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
-              role="button">Make a
-              Booking</a>
-          </div>
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
-              role="button">Manage
-              Bookings</a>
-          </div>
-
-          {% else %}
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="/accounts/signup"
-              role="button">Sign
-              Up</a>
-          </div>
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="/accounts/login"
-              role="button">Login</a>
-          </div>
-
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div> -->
-    {% endblock %}
+</div>
+{% endblock %}
+<!-- <script>
+document.getElementsByClassName("confirm-delete").on('click', '.confirm-delete', function(){
+    return confirm('Are you sure you want to delete this?');
+})
+</script> -->

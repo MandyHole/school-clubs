@@ -6,10 +6,16 @@ from datetime import timedelta, date, datetime
 
 
 class Parent(models.Model):
-    parent_fname = models.CharField(max_length=25, null=False, blank=False)
-    parent_surname = models.CharField(max_length=25, null=False, blank=False)
-    contact_no = models.BigIntegerField(null=False, blank=False)
-    # user_info = models.ForeignKey(User, on_delete=models.CASCADE)
+    parent_fname = models.CharField(
+        max_length=25, 
+        null=False, blank=False, verbose_name="Your first name")
+    parent_surname = models.CharField(
+        max_length=25, null=False, blank=False, verbose_name="Your surname")
+    contact_no = models.CharField(
+        max_length=12,
+        null=False, blank=False, verbose_name="Your contact number")
+    parent_email = models.EmailField()
+    user_info = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.parent_fname} {self.parent_surname}: {self.contact_no}'
@@ -30,6 +36,10 @@ class Pupil(models.Model):
     surname_of_pupil = models.CharField(max_length=25, null=False, blank=False)
     year_gp = models.CharField(
         max_length=1, choices=YEAR_GROUPS, verbose_name="Year group")
+    user_info = models.ForeignKey(User, on_delete=models.CASCADE)
+    # parent_of_pupil = models.ForeignKey(
+    #     Parent(), on_delete=models.CASCADE, related_name="pupil_parent")
+    contact_email_for_pupil = models.EmailField()
 
     def __str__(self):
         return f'{self.first_name_of_pupil} {self.surname_of_pupil}: {self.year_gp}'

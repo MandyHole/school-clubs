@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block hero%} <div class="hero-logout">{% endblock %}
+
+  {% block content %}
+  {% load crispy_forms_tags %}
+  <div class="container">
+    <div class="row">
+      <div class="col hero-text-position">
+        {% if user.is_authenticated %}
+        <div class="col-md-6 offset-md-3 box-heading-background">
+          <h1 class="white-text center-align-text">Amend Your Child's Details</h1>
+          <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <p>
+                    <button type="submit" class="gold-btn">Update Details</button>
+                </p>
+            </div>
+        </form>
+          {% else %}
+          <h1 class="white-text large-text">Login to add a pupil</h1>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

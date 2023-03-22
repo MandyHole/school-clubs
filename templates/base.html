@@ -50,8 +50,8 @@
               src="{% static 'media/School-Clubs-white-logo.png' %}" alt="School Clubs Logo"></a></div>
         <div class="nav-content"> <button class="navbar-toggler remove-shadow" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars white-text"></i></span>
+            aria-label="Toggle navigation" onclick="navIcon()">
+            <span class="navbar-toggler-icon" id="sc-menu-icon"><i class="fa-solid fa-bars white-text"></i></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-transparency">
@@ -59,24 +59,39 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 {% if user.is_superuser %}
                 <li><a href="{% url 'admin_page' %}">Admin Area</a></li>
-                <li><a href="{% url 'account_logout' %}">Logout</a></li></ul>
-                {% elif user.is_authenticated %}
-                <li><a href="{% url 'new_booking' %}">Book Now</a></li>
-                <li><a href="{% url 'manage_bookings' %}">Manage Bookings</a></li>
-                <li><a href="{% url 'account_logout' %}">Logout</a></li></ul>
+                <li><a href="{% url 'account_logout' %}">Logout</a></li>
+              </ul>
+              {% elif user.is_authenticated %}
+              <li><a href="{% url 'new_booking' %}">Book Now</a></li>
+              <li><a href="{% url 'get_manage_booking' %}">Manage Bookings</a></li>
+              <li><a href="{% url 'account_logout' %}">Logout</a></li>
+              </ul>
 
-                {% else %}
-                <li><a href="{% url 'account_login' %}">Sign In</a></li>
-                <li><a href="{% url 'account_signup' %}">Sign Up</a></li></ul>
+              {% else %}
+              <li><a href="{% url 'account_login' %}">Sign In</a></li>
+              <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+              </ul>
+              {% endif %}
 
-                {% endif %}
-            
-              </div>
+            </div>
           </div>
         </div>
       </div>
 
     </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          {% for message in messages %}
+          <div class="alert {{ message.tags }} alert-dismissable fade show" id="msgs" role="alert">{{ message | safe }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button></div>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
 
 
 
@@ -94,10 +109,28 @@
 
   <!-- </footer> -->
   <!-- Footer -->
+  <script>
+    setTimeout(function () {
+      let alert_messages = document.getElementById('msgs');
+      let alert = new bootstrap.Alert(alert_messages);
+      alert.close()
+    }, 2500);
+
+
+    function navIcon() {
+
+      if (document.getElementById("sc-menu-icon").innerHTML == '<i class="fa-solid fa-bars white-text"></i>') {
+        document.getElementById("sc-menu-icon").innerHTML = '<i class="fa-solid fa-x white-text"></i>'
+      } else {
+        document.getElementById("sc-menu-icon").innerHTML = '<i class="fa-solid fa-bars white-text">'
+      }
+    }
+    </script>
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
-
+  
 </body>
 
 </html>
