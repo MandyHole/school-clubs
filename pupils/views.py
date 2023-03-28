@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
-from .models import BookClub, Breakfast, Parent, Pupil
+from .models import Parent, Pupil, DateRequest, Breakfast, BreakfastRequest
 from django.contrib.auth.models import User
-from .forms import PupilForm, ParentForm, EditParentForm
+from .forms import PupilForm, ParentForm, EditParentForm, DateRequestForm, SetBreakfastDates
+from datetime import date
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 
@@ -11,19 +13,17 @@ def get_homepage(request):
     return render(request, '../templates/index.html')
 
 
-def get_admin_page(request):
-    return render(request, '../templates/admin_page.html')
-
-
 def get_manage_booking(request):
     pupils = Pupil.objects.all()
     parents = Parent.objects.all()
     users = User.objects.all()
+    date_requests = DateRequest.objects.all()
 
     context = {
         'pupils': pupils,
         'parents': parents,
-        'users': users
+        'users': users,
+        'date_requests': date_requests
     }
 
     return render(request, '../templates/manage_bookings.html', context)
@@ -100,7 +100,7 @@ class AddParent(View):
             add_parent_form = ParentForm()
 
         return render(
-            request, 
+            request,
             '../templates/manage_bookings.html',
             {
                 "add_parent_form": ParentForm()
@@ -153,3 +153,79 @@ def delete_pupil(request, pupil_id):
     pupil = get_object_or_404(Pupil, id=pupil_id)
     pupil.delete()
     return redirect('get_manage_booking')
+
+
+class AdminPage(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            '../templates/admin_page.html',
+            {
+                "set_breakfast_date_form": SetBreakfastDates()
+            },
+        )
+
+    def post(self, request, *args, **kwargs):
+        set_breakfast_date_form = SetBreakfastDates(data=request.POST)
+        if set_breakfast_date_form.is_valid():
+            # set_breakfast_date_form.instance.breakfast_option = date.today()
+            newdates = set_breakfast_date_form.save(commit=False)
+            newdates.save()
+        else:
+            set_breakfast_date_form = SetBreakfastDates()
+
+        return render(
+            request,
+            '../templates/admin_page.html',
+            {
+                "set_breakfast_date_form": SetBreakfastDates()
+            },
+        )
+
+
+def breakfast_request(request, pupil_id):
+    pupils = Pupil.objects.all()
+    context = {
+        'pupils': pupils,
+    }
+    pupil = get_object_or_404(Pupil, id=pupil_id)
+    if request.method == 'POST':
+        breakfast_form = BreakfastRequestForm(request.POST)
+        if breakfast_form.is_valid():
+            breakfast_form.instance.pupil = pupil
+            breakfast_form.save()
+            return redirect('get_manage_booking')
+
+    breakfast_form = BreakfastRequestForm(instance=pupil)
+    context = {
+        'breakfast_form': breakfast_form,
+        'pupil': pupil
+    }
+    return render(request, '../templates/breakfast_request.html', context)
+
+
+def date_request(request, pupil_id):
+    pupils = Pupil.objects.all()
+    context = {
+        'pupils': pupils,
+    }
+    pupil = get_object_or_404(Pupil, id=pupil_id)
+    if request.method == 'POST':
+        date_form = DateRequestForm(request.POST)
+        if date_form.is_valid():
+            date_form.instance.pupil = pupil
+            date_form.save()
+            return redirect('get_manage_booking')
+
+    date_form = DateRequestForm(instance=pupil)
+    context = {
+        'date_form': date_form,
+        'pupil': pupil
+    }
+    return render(request, '../templates/date_request.html', context)
+
+
+class DateCreateView(CreateView):
+    model = DateRequest()
+    form_class = DateRequestForm

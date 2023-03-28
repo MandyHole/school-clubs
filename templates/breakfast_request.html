@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block hero%} <div class="hero-logout">{% endblock %}
+
+  {% block content %}
+  {% load crispy_forms_tags %}
+  <div class="container">
+    <div class="row">
+      <div class="col hero-text-position">
+        {% if user.is_authenticated %}
+        <div class="col-md-6 offset-md-3 box-heading-background">
+          <h1 class="white-text center-align-text">Date Request Form</h1>
+          <p>Please use this form to let us know of any dates you'd like to add or cancel for <strong>{{ pupil }}</strong>. Please see our <a href="{% url 'get_manage_booking' %}">Manage Booking Page</a> for your previously requested dates and their approval status.</p>
+          <form method="POST">
+            {% csrf_token %}
+            {{ breakfast_form | crispy }}
+            <div>
+                <p>
+                    <button type="submit" class="gold-btn">Submit Request</button>
+                </p>
+            </div>
+        </form>
+          {% else %}
+          <h1 class="white-text large-text">Login to make a request</h1>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

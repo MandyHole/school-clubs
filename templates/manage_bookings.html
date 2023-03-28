@@ -58,8 +58,11 @@
             <h6 class="card-subtitle mb-2">Year Group: {{ pupil.year_gp }}</h6>
             <p class="card-text"> <a href="/amend_pupil/{{ pupil.id }}">
                 <button class="navy-btn">Edit pupil details</button>
-              </a><a  href="#myModal" class="trigger-btn" data-toggle="modal" >
-                <button class="navy-btn">Delete</button> 
+              </a><a  href="#myModal" class="navy-btn" data-toggle="modal" >
+                <button class="navy-btn">Delete this pupil </button> 
+              </a>
+              <a href="/date_request/{{ pupil.id }}">
+                <button class="navy-btn">Make Date Request</button>
               </a>
             </p>
           </div>
@@ -94,8 +97,3 @@
 </div>
 </div>
 {% endblock %}
-<!-- <script>
-document.getElementsByClassName("confirm-delete").on('click', '.confirm-delete', function(){
-    return confirm('Are you sure you want to delete this?');
-})
-</script> -->

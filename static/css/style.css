@@ -347,7 +347,3 @@ li>a:hover{
 .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
 	background: #003e6b
 }
-.trigger-btn {
-	display: inline-block;
-	margin: 100px auto;
-}

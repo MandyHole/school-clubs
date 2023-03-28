@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pupils.views import get_homepage, get_admin_page, get_manage_booking
+from pupils.views import get_homepage, get_manage_booking
 from pupils.views import get_make_booking, add_pupil, edit_parent
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from pupils import views
@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_homepage, name='home'),
     path('accounts/', include('allauth.urls')),
-    path('admin_page/', get_admin_page, name='admin_page'),
+    path('admin_page/', views.AdminPage.as_view(), name='admin_page'),
     path('manage_bookings/', get_manage_booking, name='get_manage_booking'),
     path('book_new/', get_make_booking, name='new_booking'),
     # path('add_pupil/', views.add_pupil, name='add_pupil'),
@@ -32,6 +32,14 @@ urlpatterns = [
     path('add_parent/', views.AddParent.as_view(), name='add_parent'),
     path('amend_parent/<parent_id>', views.edit_parent, name='amend_parent'),
     path('amend_pupil/<pupil_id>', views.edit_pupil, name='amend_pupil'),
-    path('delete_pupil/<pupil_id>', views.delete_pupil, name='delete_pupil')
+    path('delete_pupil/<pupil_id>', views.delete_pupil, name='delete_pupil'),
+    path(
+        'breakfast_request/<pupil_id>',
+        views.breakfast_request,
+        name='breakfast_request'),
+    path(
+        'date_request/<pupil_id>',
+        views.date_request,
+        name='date_request')
 ]
 urlpatterns += staticfiles_urlpatterns()
