@@ -12,12 +12,14 @@ admin.site.register(Parent)
 @admin.register(Pupil)
 class PupilAdmin(admin.ModelAdmin):
     list_display = (
+        'booking_approval_status',
         'first_name_of_pupil',
         'surname_of_pupil',
         'year_gp',
         'contact_email_for_pupil')
     list_filter = (
         'year_gp',
+        'booking_approval_status',
         'b_mon',
         'b_tues',
         'b_wed',
@@ -30,7 +32,8 @@ class PupilAdmin(admin.ModelAdmin):
         's_fri'
         )
     actions = [
-        'advance_year'
+        'advance_year',
+        'approve_booking'
     ]
     ordering = ['surname_of_pupil']
 
@@ -42,6 +45,9 @@ class PupilAdmin(admin.ModelAdmin):
         Pupil.objects.filter(year_gp='2').update(year_gp='3')
         Pupil.objects.filter(year_gp='1').update(year_gp='2')
         Pupil.objects.filter(year_gp='0').update(year_gp='1')
+
+    def approve_booking(self, request, queryset):
+        queryset.update(booking_approval_status=1)
 
 
 # @admin.register(BreakfastRequest)
@@ -70,18 +76,20 @@ class DateRequestAdmin(admin.ModelAdmin):
         )
     ordering = ['date_request']
     actions = ['approve_request', 'deny_lack_notice', 'deny_unavailable']
+    list_filter = (
+        'approval_status',
+        'pupil'
+    )
 
     def approve_request(self, request, queryset):
         queryset.update(approval_status=1)
 
     def deny_lack_notice(self, request, queryset):
         queryset.update(
-            approval_status=2,
-            why_declined=2
+            approval_status=3,
         )
 
     def deny_unavailable(self, request, queryset):
         queryset.update(
             approval_status=2,
-            why_declined=1
         )

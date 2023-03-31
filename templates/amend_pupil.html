@@ -8,8 +8,9 @@
     <div class="row">
       <div class="col hero-text-position">
         {% if user.is_authenticated %}
+        {% if pupil.user_info == user %}
         <div class="col-md-6 offset-md-3 box-heading-background">
-          <h1 class="white-text center-align-text">Amend Your Child's Details</h1>
+          <h1 class="white-text center-align-text">Update {{ pupil }}'s regular bookings</h1>
           <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
@@ -18,9 +19,12 @@
                     <button type="submit" class="gold-btn">Update Details</button>
                 </p>
             </div>
-        </form>
+        </form> {% else %}
+        <h1 class="white-text large-text">You need to login to the correct account before you can edit this booking</h1>
+
+        {% endif %}
           {% else %}
-          <h1 class="white-text large-text">Login to add a pupil</h1>
+          <h1 class="white-text large-text">Login to edit this booking</h1>
           <div class="d-grid gap-2 col-6 mx-auto">
             <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
           </div>

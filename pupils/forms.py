@@ -20,6 +20,34 @@ class PupilForm(forms.ModelForm):
             'first_name_of_pupil',
             'surname_of_pupil',
             'year_gp',
+            'parent_name',
+            'parent_contact',
+            'b_mon',
+            'b_tues',
+            'b_wed',
+            'b_thurs',
+            'b_fri',
+            's_mon',
+            's_tues',
+            's_wed',
+            's_thurs',
+            's_fri',
+            'confirmation',
+            )
+
+    def clean_confirmation(self):
+        confirmation = self.cleaned_data.get('confirmation')
+        if confirmation is False:
+            raise forms.ValidationError('This field is required')
+        return confirmation
+
+
+class EditPupilForm(forms.ModelForm):
+    class Meta:
+        model = Pupil
+        fields = (
+            'parent_contact',
+            'contact_email_for_pupil',
             'b_mon',
             'b_tues',
             'b_wed',

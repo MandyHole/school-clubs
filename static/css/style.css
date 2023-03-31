@@ -347,3 +347,13 @@ li>a:hover{
 .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
 	background: #003e6b
 }
+
+.applicable {
+    font-size: smaller;
+    font-style: italic;
+}
+
+.pupil-title {
+    margin-bottom: 0.9rem;
+    color: black;
+}

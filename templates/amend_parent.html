@@ -8,12 +8,10 @@
     <div class="row">
       <div class="col hero-text-position">
 
-        Parent_id: {{ parent_id }}
-        parent.id: {{ parent.id }}
-        parent user id {{ parent.user_info.pk }}
-        user id {{ user.pk }}
-        {% if parent.id == parent_id and parent.user_info.pk == user.pk %}
+{% for parent in parents %} 
 
+        {% if parent.user_info.pk == user.pk %}
+        {{ parent.id }} {{parent_id }}
         <div class="col-md-6 offset-md-3 box-heading-background">
           <h1 class="white-text center-align-text">Edit your details</h1>
           <form method="POST">
@@ -25,14 +23,8 @@
               </p>
             </div>
           </form>
-   
-        {% else %}
-          <h1 class="white-text large-text">You do not have permission to edit these details</h1>
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
-          </div>
-        </div> 
         {% endif %}
+        {% endfor %}
       </div>
     </div>
 

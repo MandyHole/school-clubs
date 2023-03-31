@@ -9,8 +9,8 @@
       <div class="col hero-text-position">
         {% if user.is_authenticated %}
         <div class="col-md-6 offset-md-3 box-heading-background">
-          <h1 class="white-text center-align-text">Date Request Form</h1>
-          <p>Please use this form to let us know of any dates you'd like to add or cancel for <strong>{{ pupil }}</strong>. Please see our <a href="{% url 'get_manage_booking' %}">Manage Booking Page</a> for your previously requested dates and their approval status.</p>
+          <h1 class="white-text center-align-text">Date Request Form for {{ pupil }}</h1>
+          <p>Please use this form to let us know of any dates you'd like to add or cancel for <strong>{{ pupil }}</strong> (at least 48 hours notice is required). Please see our <a href="{% url 'get_manage_booking' %}">Manage Booking Page</a> for your previously requested dates and their approval status.</p>
           <form method="POST">
             {% csrf_token %}
             {{ date_form | crispy }}

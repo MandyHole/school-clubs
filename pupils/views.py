@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from .models import Parent, Pupil, DateRequest, Breakfast, BreakfastRequest
 from django.contrib.auth.models import User
-from .forms import PupilForm, ParentForm, EditParentForm, DateRequestForm, SetBreakfastDates
+from .forms import PupilForm, ParentForm, EditParentForm, DateRequestForm, SetBreakfastDates, EditPupilForm
 from datetime import date
 from django.views.generic.edit import CreateView
 
@@ -63,8 +63,10 @@ class AddPupil(View):
         if add_pupil_form.is_valid():
             add_pupil_form.instance.contact_email_for_pupil = request.user.email
             add_pupil_form.instance.user_info = request.user
+            # add_pupil_form.instance.parent_info = request
             pupil = add_pupil_form.save(commit=False)
             pupil.save()
+            return redirect('get_manage_booking')
         else:
             add_pupil_form = PupilForm()
 
@@ -137,14 +139,20 @@ def edit_parent(request, parent_id):
 
 def edit_pupil(request, pupil_id):
     pupil = get_object_or_404(Pupil, id=pupil_id)
+    users = User.objects.all()
     if request.method == 'POST':
-        form = PupilForm(request.POST, instance=pupil)
+        form = EditPupilForm(request.POST, instance=pupil)
         if form.is_valid():
+            form.instance.booking_approval_status = '0'
             form.save()
-            return redirect('new_booking')
-    form = PupilForm(instance=pupil)
+            return redirect('get_manage_booking')
+    form = EditPupilForm(instance=pupil)
+    parents = Parent.objects.all()
     context = {
-        'form': form
+        'form': form,
+        'pupil': pupil,
+        'parents': parents,
+        'users': users
     }
     return render(request, '../templates/amend_pupil.html', context)
 
