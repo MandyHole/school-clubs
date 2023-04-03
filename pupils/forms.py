@@ -1,6 +1,7 @@
 from .models import Pupil, Parent, DateRequest, Breakfast, BreakfastRequest
 from django import forms
 from django.forms import ModelForm
+# from django.core.exceptions import ValidationError
 
 
 class DateInput(forms.DateInput):
@@ -35,11 +36,18 @@ class PupilForm(forms.ModelForm):
             'confirmation',
             )
 
+    def __init__(self, *args, **kwargs):
+        super(PupilForm, self).__init__(*args, **kwargs)
+        self.fields['b_mon'].legend = "Select your regular slots"
+
     def clean_confirmation(self):
         confirmation = self.cleaned_data.get('confirmation')
         if confirmation is False:
             raise forms.ValidationError('This field is required')
         return confirmation
+
+
+
 
 
 class EditPupilForm(forms.ModelForm):

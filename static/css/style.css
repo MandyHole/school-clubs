@@ -23,28 +23,22 @@ select {
 }
 /* hero styles */
 
-.hero {
-    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1677845926/pancakes_wdqqib.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.hero-header-big {
     height: 68vh;
 }
 
-.hero-admin {
-    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1678138549/pexels-lukas-13522702_maosc3.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 68vh;
+.hero-header-small {
+    height: 50vh;
 }
 
-.hero-logout {
-    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1678138549/pexels-lukas-13522702_maosc3.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.hero-full {
     height: 100vh;
+    margin-bottom: 44px;
+}
+
+.hero-image {
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero-text-position {
@@ -53,6 +47,37 @@ select {
     margin-top: -24px;
 }
 
+.hero {
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1677845926/pancakes_wdqqib.jpg);
+    background-position: center;
+}
+
+.hero-logout {
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1678138549/pexels-lukas-13522702_maosc3.jpg);
+    background-position: center;
+}
+
+.hero-add-child {
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1680516666/pexels-elviss-railijs-bitans-1448665-web_aq59z6.jpg);
+    background-position: top center;
+}
+
+.hero-edit-child {
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1680518435/pexels-chan-walrus-958545-web_mrmfgn.jpg);
+    background-position: center;
+}
+
+.hero-manage {
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1680518200/pexels-nicola-barts-7937469-web_oqi0gh.jpg);
+    background-position: center;
+}
+
+.hero-date-request {
+    background-image: url(https://res.cloudinary.com/dd4cchm7g/image/upload/v1680518627/pexels-jer-chung-2116094-web_u42pji.jpg);
+    background-position: center;
+}
+
+
 /* navigation styles */
 
 .logo {
@@ -60,23 +85,6 @@ select {
     height: 85px;
     margin-left: 15px;
 }
-/* 
-.navbar-background {
-    background-color: rgba(255, 255, 255, 0.0);
-    background-image: none;
-    border: none;
-    box-shadow: none;
-} */
-
-/* .logo{
-    display: inline-block;
-    float: left;
-}
-
-.nav-content {
-    display: inline-block;
-    float: right;
-} */
 
 .navbar-transparency {
     background-color: rgba(255, 255, 255, 0.8);
@@ -107,9 +115,6 @@ li>a:hover{
     color: #575756;
 }
 
-/* .navbar-default .navbar-nav>li>a:hover {
-    color: #575756;
-} */
 .navbar-toggler-icon > i {
     font-size: 3rem;
     text-align: right;
@@ -123,7 +128,7 @@ li>a:hover{
 
 .white-text {
     color: white;
-    text-shadow: 1px 1px #575756;
+    text-shadow: 2px 2px #575756;
 }
 
 .center-align-text {
@@ -140,6 +145,7 @@ li>a:hover{
     margin-top: 5px;
     width: 100%;
     font-size: 1.3rem;
+    text-transform: uppercase;
 }
 .navy-btn:hover {
     background-color: #fff;
@@ -156,6 +162,7 @@ li>a:hover{
     margin-top: 5px;
     width: 100%;
     font-size: 1.3rem;
+    text-transform: uppercase;
 }
 
 .gold-btn:hover {
@@ -165,20 +172,8 @@ li>a:hover{
     border-width: 2px;
 }
 
-/* form > .gold-btn:hover {
-    background-color: #fff;
-    color: #003e6b;
-    border-color: #be9f56;
-    border-width: 1px;
-} */
-
 .btn-margin {
     margin-top: 15px;
-}
-
-.accordian-btn{
-    width: 100%;
-    background: #003e6b;
 }
 
 /* footer styles */
@@ -220,9 +215,6 @@ li>a:hover{
     text-decoration: underline;
 }
 
-/* .box-heading-background > form > button {
-    color: #003e6b;
-} */
 
 .gold-background {
     background-color: #be9f56;
@@ -259,15 +251,6 @@ li>a:hover{
 .login-notice > h2 {
     color: black;
 }
-
-/* #sc-menu-icon{
-    background-image: url('https://res.cloudinary.com/dd4cchm7g/image/upload/v1679151965/bars-solid_dyrbpy.png');
-} */
-
-/* #hamburger:focus {
-    background-image: url('https://res.cloudinary.com/dd4cchm7g/image/upload/v1679152100/x-solid_hf8x6n.png')
-} */
-
 
 .modal-confirm {		
 	color: #636363;

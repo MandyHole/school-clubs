@@ -42,12 +42,8 @@
             <div class="navbar-transparency">
               <ul class="nav navbar-nav navbar-right nav-height">
                 <li><a href="{% url 'home' %}">Home</a></li>
-                {% if user.is_superuser %}
-                <li><a href="{% url 'admin_page' %}">Admin Area</a></li>
-                <li><a href="{% url 'account_logout' %}">Logout</a></li>
-              </ul>
-              {% elif user.is_authenticated %}
-              <li><a href="{% url 'new_booking' %}">Book Now</a></li>
+                {% if user.is_authenticated %}
+              <li><a href="{% url 'add_new_pupil' %}">Add a Child</a></li>
               <li><a href="{% url 'get_manage_booking' %}">Manage Bookings</a></li>
               <li><a href="{% url 'account_logout' %}">Logout</a></li>
               </ul>

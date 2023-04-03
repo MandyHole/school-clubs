@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block hero%} <div class="hero">{% endblock %}
+{% block hero%} <div class="hero hero-image hero-header-big">{% endblock %}
 
   {% block content %}
   <div class="container">
@@ -18,8 +18,7 @@
 
         {% if user.is_authenticated %}
         <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="hide-element-mobile"><a class="btn gold-btn" role="button" href="{% url 'new_booking' %}">Make a
-              booking</a>
+          <div class="hide-element-mobile"><a class="btn gold-btn" role="button" href="{% url 'add_new_pupil' %}">Add a child</a>
           </div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
@@ -37,17 +36,6 @@
           <div class="hide-element-mobile"><a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
           </div>
         </div>
-<!-- 
-        <div class="hide-element-mobile">
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg gold-btn btn-block btn-margin"
-              href="{% url 'account_signup' %}" role="button">Sign Up</a>
-          </div>
-        </div>
-        <div class="hide-element-mobile">
-          <div class="col-xs-6"> <a class="btn btn-default btn-lg navy-btn btn-block btn-margin"
-              href="{% url 'account_login' %}" role="button">Login</a>
-          </div>
-        </div> -->
 
         {% endif %}
 
@@ -55,7 +43,6 @@
     </div>
   </div>
 </div>
-<!-- <div class="col-md-6"></div> -->
 </div>
 </div>
 <div class="row gold-background">
@@ -75,18 +62,17 @@
         <div class="row box-body-background">
 
           {% if user.is_authenticated %}
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'new_booking' %}"
-              role="button">Make a
-              Booking</a>
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'add_new_pupil' %}"
+              role="button">Add a child</a>
           </div>
           <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'get_manage_booking' %}">Manage
-              Bookings</a>
+              bookings</a>
           </div>
 
           {% else %}
           <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'account_signup' %}"
               role="button">Sign
-              Up</a>
+              up</a>
           </div>
           <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'account_login' %}"
               role="button">Login</a>
@@ -109,19 +95,18 @@
         </div>
         <div class="row box-body-background">
           {% if user.is_authenticated %}
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'new_booking' %}"
-              role="button">Make a
-              Booking</a>
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'add_new_pupil' %}"
+              role="button">Add a child</a>
           </div>
           <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'get_manage_booking' %}"
               role="button">Manage
-              Bookings</a>
+              bookings</a>
           </div>
 
           {% else %}
           <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'account_signup' %}"
               role="button">Sign
-              Up</a>
+              up</a>
           </div>
           <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'account_login' %}"
               role="button">Login</a>

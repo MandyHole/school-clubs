@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import timedelta, date, datetime
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 
@@ -96,6 +97,7 @@ class Pupil(models.Model):
         default=True,
         null=False,
         blank=False,
+        # validators=[confirmation_check()]
     )
     booking_approval_status = models.CharField(
         max_length=1,
@@ -105,6 +107,14 @@ class Pupil(models.Model):
 
     def __str__(self):
         return f'{self.first_name_of_pupil} {self.surname_of_pupil}'
+
+
+def confirmation_check(value):
+    if value is False:
+        raise ValidationError(
+            _('You must tick to confirm'),
+            params={'value': value},
+            )
 
 
 class Breakfast(models.Model):

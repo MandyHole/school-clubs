@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block hero %}
-<div class="hero-admin">
+<div class="hero-manage hero-header-small hero-image">
 
   {% endblock %}
 
@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col hero-text-position">
         {% if user.is_authenticated %}
-        <h1 class="white-text large-text">Manage your bookings and details</h1>
+        <h1 class="white-text large-text">Manage Your Bookings</h1>
         {% else %}
         <h1 class="white-text large-text">Please login to see this page</h1>
 
