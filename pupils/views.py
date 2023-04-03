@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from .models import Parent, Pupil, DateRequest, Breakfast, BreakfastRequest
 from django.contrib.auth.models import User
-from .forms import PupilForm, ParentForm, EditParentForm, DateRequestForm, SetBreakfastDates, EditPupilForm
+from .forms import PupilForm, ParentForm, EditParentForm, DateRequestForm, EditPupilForm
 from datetime import date
 from django.views.generic.edit import CreateView
 
@@ -160,6 +160,12 @@ def edit_pupil(request, pupil_id):
 def delete_pupil(request, pupil_id):
     pupil = get_object_or_404(Pupil, id=pupil_id)
     pupil.delete()
+    return redirect('get_manage_booking')
+
+
+def delete_date(request, cancel_id):
+    cancel = get_object_or_404(DateRequest, id=cancel_id)
+    cancel.delete()
     return redirect('get_manage_booking')
 
 

@@ -104,6 +104,11 @@ class Pupil(models.Model):
         choices=APPROVAL_OPTIONS,
         verbose_name="Approval status",
         default='0')
+    amount_owed = models.DecimalField(
+        default=0,
+        max_digits=5,
+        decimal_places=2
+    )
 
     def __str__(self):
         return f'{self.first_name_of_pupil} {self.surname_of_pupil}'

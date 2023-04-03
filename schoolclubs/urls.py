@@ -34,6 +34,10 @@ urlpatterns = [
     path('amend_pupil/<pupil_id>', views.edit_pupil, name='amend_pupil'),
     path('delete_pupil/<pupil_id>', views.delete_pupil, name='delete_pupil'),
     path(
+        'delete_date/<cancel_id>',
+        views.delete_date,
+        name='delete_date'),
+    path(
         'breakfast_request/<pupil_id>',
         views.breakfast_request,
         name='breakfast_request'),

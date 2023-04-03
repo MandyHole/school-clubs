@@ -93,12 +93,35 @@
 
               {% if date_request.pupil == pupil %} <li>{{ date_request.date_request }}
                 ({{ date_request.get_type_of_request_display }}): {{ date_request.get_approval_status_display }}</li>
+                {% if date_request.approval_status == '0' %} <a href="#deleteDateModal" data-toggle="modal">
+                  <button class="navy-btn-small">Cancel request </button>
+
+                </a>                   <div id="deleteDateModal" class="modal fade">
+                  <div class="modal-dialog modal-confirm">
+                    <div class="modal-content">
+                      <div class="modal-header flex-column">
+                        <div class="icon-box">
+                          <i class="fa-solid fa-x"></i>
+                        </div>
+                        <h4 class="modal-title w-100">Are you sure?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Are you sure you wish to cancel this request? This process cannot be undone, and you will have to make a new request.</p>
+                      </div>
+                      <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a href="/delete_date/{{ date_request.id }}"><button type="button" class="btn btn-danger">Delete</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>{% endif %}
               {% endif %}{% endfor %}</ul>
             <p class="card-text"> <a href="/amend_pupil/{{ pupil.id }}">
                 <button class="navy-btn">Edit regular slots/contact details</button>
-              </a><a href="#myModal" class="navy-btn" data-toggle="modal">
+              <!-- </a><a href="#myModal" class="navy-btn" data-toggle="modal">
                 <button class="navy-btn">Delete this child's records </button>
-              </a>
+              </a> -->
               <a href="/date_request/{{ pupil.id }}">
                 <button class="navy-btn">Make one-off date request</button>
               </a>
@@ -117,12 +140,11 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-              <p>Do you really want to delete these records? This will cancel all future bookings, and you will have to
-                add their details again to book clubs in the future. This process cannot be undone.</p>
+              <p>Are you sure you wish to cancel this request? This process cannot be undone, and you will have to make a new request.</p>
             </div>
             <div class="modal-footer justify-content-center">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <a href="/delete_pupil/{{ pupil.id }}"><button type="button" class="btn btn-danger">Delete</button></a>
+              <a href="/delete_date/{{ cancel.id }}"><button type="button" class="btn btn-danger">Delete</button></a>
             </div>
           </div>
         </div>

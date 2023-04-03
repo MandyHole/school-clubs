@@ -154,6 +154,21 @@ li>a:hover{
     border-width: 2px;
 }
 
+.navy-btn-small {
+    background-color: #003e6b;
+    color: #fff;
+    background-image: none;
+    text-shadow: none;
+    margin-top: 5px;
+}
+
+.navy-btn-small:hover {
+    background-color: #fff;
+    color: #003e6b;
+    border-color: #003e6b;
+    border-width: 2px;
+}
+
 .gold-btn {
     background-color: #be9f56;
     color: #000;

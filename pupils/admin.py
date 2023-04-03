@@ -33,7 +33,10 @@ class PupilAdmin(admin.ModelAdmin):
         )
     actions = [
         'advance_year',
-        'approve_booking'
+        'approve_booking',
+        'add_breakfast_fee',
+        'add_supper_fee',
+        'reset_billing_cycle'
     ]
     ordering = ['surname_of_pupil']
 
@@ -49,7 +52,16 @@ class PupilAdmin(admin.ModelAdmin):
     def approve_booking(self, request, queryset):
         queryset.update(booking_approval_status=1)
 
+    def add_breakfast_fee(self, request, queryset):
+        queryset.update(amount_owed=+2)
 
+    def add_supper_fee(self, request, queryset):
+        # current = self(amount_owed)
+        new_amount = "45.00"
+        queryset.update(amount_owed=45)
+
+    def reset_billing_cycle(self, request, queryset):
+        queryset.update(amount_owed=0)
 # @admin.register(BreakfastRequest)
 # class BRequestAdmin(admin.ModelAdmin):
 #     list_display = (

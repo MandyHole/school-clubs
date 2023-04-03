@@ -47,9 +47,6 @@ class PupilForm(forms.ModelForm):
         return confirmation
 
 
-
-
-
 class EditPupilForm(forms.ModelForm):
     class Meta:
         model = Pupil
