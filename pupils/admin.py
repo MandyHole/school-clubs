@@ -1,12 +1,7 @@
 from django.contrib import admin
-from .models import Parent, Pupil, BookClub, Breakfast, BreakfastRequest, DateRequest
+from .models import Pupil, DateRequest
 
 # Register your models here.
-# admin.site.register(Breakfast)
-# admin.site.register(Supper)
-admin.site.register(Parent)
-# admin.site.register(BookClub)
-# admin.site.register(DateRequest)
 
 
 @admin.register(Pupil)
@@ -62,20 +57,7 @@ class PupilAdmin(admin.ModelAdmin):
 
     def reset_billing_cycle(self, request, queryset):
         queryset.update(amount_owed=0)
-# @admin.register(BreakfastRequest)
-# class BRequestAdmin(admin.ModelAdmin):
-#     list_display = (
-#         'additional_breakfast',
-#         'cancel_breakfast',
-#         'approved',
-#         'request_date',
-#         'pupil'
-#         )
-#     ordering = ['request_date']
-#     actions = ['approve_request']
 
-#     def approve_request(self, request, queryset):
-#         queryset.update(approved=True)
 
 @admin.register(DateRequest)
 class DateRequestAdmin(admin.ModelAdmin):

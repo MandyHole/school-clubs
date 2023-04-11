@@ -6,22 +6,6 @@ from django.core.exceptions import ValidationError
 # Create your models here.
 
 
-class Parent(models.Model):
-    parent_fname = models.CharField(
-        max_length=25,
-        null=False, blank=False, verbose_name="Your first name")
-    parent_surname = models.CharField(
-        max_length=25, null=False, blank=False, verbose_name="Your surname")
-    contact_no = models.CharField(
-        max_length=12,
-        null=False, blank=False, verbose_name="Your contact number")
-    parent_email = models.EmailField()
-    user_info = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.parent_fname} {self.parent_surname}: {self.contact_no}'
-
-
 class Pupil(models.Model):
     YEAR_GROUPS = (
         ('0', 'Reception'),
@@ -120,57 +104,6 @@ def confirmation_check(value):
             _('You must tick to confirm'),
             params={'value': value},
             )
-
-
-class Breakfast(models.Model):
-
-    # breakfast_option = models.DateField()
-    breakfast_start_date = models.DateField()
-    breakfast_end_date = models.DateField()
-
-
-class BookClub(models.Model):
-    pupil_name = models.ForeignKey(
-        Pupil, on_delete=models.CASCADE)
-    parent_name = models.ForeignKey(Parent, on_delete=models.CASCADE)
-    if_breakfast = models.BooleanField(null=False, blank=False)
-    if_supper = models.BooleanField(null=False, blank=False)
-    monday = models.BooleanField(null=False, blank=False)
-    tuesday = models.BooleanField(null=False, blank=False)
-    wednesday = models.BooleanField(null=False, blank=False)
-    thursday = models.BooleanField(null=False, blank=False)
-    friday = models.BooleanField(null=False, blank=False)
-    # supper = models.ForeignKey(Supper, on_delete=models.CASCADE)
-    # breakfast = models.ForeignKey(Breakfast, on_delete=models.CASCADE)
-    confirmation = models.BooleanField(null=False, blank=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f'{self.pupil_name}: booked on {self.created_on}'
-
-
-class BreakfastRequest(models.Model):
-    additional_breakfast = models.DateField(
-        null=True,
-        blank=True,
-        verbose_name="Date of additional breakfast (if applicable)")
-    cancel_breakfast = models.DateField(
-        null=True,
-        blank=True,
-        verbose_name="Breakfast date you no longer require (if applicable)")
-    approved = models.BooleanField(null=False, blank=False, default=False)
-    additional_supper = models.DateField(
-        null=True,
-        blank=True,
-        verbose_name="Date of additional supper (if applicable)")
-    cancel_supper = models.DateField(
-        null=True,
-        blank=True,
-        verbose_name="Supper date you no longer require (if applicable)")
-    request_date = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name="Date request was made")
-    pupil = models.ForeignKey(Pupil, on_delete=models.CASCADE)
 
 
 class DateRequest(models.Model):

@@ -1,4 +1,4 @@
-from .models import Pupil, Parent, DateRequest, Breakfast, BreakfastRequest
+from .models import Pupil, DateRequest
 from django import forms
 from django.forms import ModelForm
 # from django.core.exceptions import ValidationError
@@ -6,12 +6,6 @@ from django.forms import ModelForm
 
 class DateInput(forms.DateInput):
     input_type = 'date'
-
-
-class BreakfastForm(forms.ModelForm):
-    class Meta:
-        model = Breakfast
-        fields = ('breakfast_start_date', 'breakfast_end_date',)
 
 
 class PupilForm(forms.ModelForm):
@@ -64,39 +58,6 @@ class EditPupilForm(forms.ModelForm):
             's_thurs',
             's_fri',
             )
-
-
-class ParentForm(forms.ModelForm):
-    class Meta:
-        model = Parent
-        fields = (
-            'parent_fname', 'parent_surname', 'contact_no',)
-
-
-class EditParentForm(forms.ModelForm):
-    class Meta:
-        model = Parent
-        fields = (
-            'parent_fname', 'parent_surname', 'contact_no', 'parent_email',)
-
-
-class SetBreakfastDates(forms.ModelForm):
-    class Meta:
-        model = Breakfast
-        fields = (
-            'breakfast_start_date', 'breakfast_end_date',
-        )
-
-
-class BreakfastRequestForm(forms.ModelForm):
-    class Meta:
-        model = BreakfastRequest
-        fields = (
-            'additional_breakfast',
-            'cancel_breakfast',
-            'additional_supper',
-            'cancel_supper',
-        )
 
 
 class DateRequestForm(forms.ModelForm):
