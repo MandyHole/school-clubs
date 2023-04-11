@@ -82,7 +82,7 @@ For the purpose of this project, all references to the name of the school have b
 <li><strong>Django:</strong> used to help make the website more quickly and with less code.</li>
 <li><strong>Cloudinary:</strong> used to store photographs for the project</li>
 <li><strong>ICO Converter:</strong> used to create a favicon from an image created in Illustrator https://www.icoconverter.com/</li>
-
+<li><strong>ElephantSQL:</strong> used to host the database</li>
 </ul>
 
 ## Testing
