@@ -93,7 +93,11 @@ For the purpose of this project, all references to the name of the school have b
 
 <strong>Javascript:</strong> Tested with https://jshint.com/ (no errors found)
 
-<strong>Python:</strong> Tested with Pep8 (no errors found)
+<strong>Python:</strong> Tested the pages I created/used with Pycode Style (no errors found). See steps below:
+<ul><li>In the terminal, check you have pycodestyle installed by running: pip install pycodestyle</li>
+<li>In the terminal, run pycodestyle --first *ADD RELATIVE FILEPATH HERE* for each of the pages you wish to check until no errors are found (see examples below)</li><ul><li>pycodestyle --first pupils/models.py
+</li><li>pycodestyle --first schoolclubs/urls.py</li><li>pycodestyle --first schoolclubs/settings.py (Please note that some pre-existing code from Django on settings.py failed due to line length, but all code that I added passed)</li></ul>
+</ul>
 
 <strong>Colour contrast:</strong> Tested using https://webaim.org/resources/contrastchecker/
 <ul><li>#be9f56 (gold) passed with black on gold / vice versa</li>

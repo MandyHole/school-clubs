@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 <!-- Hero Area -->
-{% block hero%} <div class="hero-add-child hero-header hero-image">{% endblock %}
-  
+
+
+{% block hero%}  {% if user.is_authenticated %}<div class="hero-add-child hero-header hero-image"> {% else %}<div class="hero-add-child hero-full hero-image">{% endif %}
+  {% endblock %}
+
   {% block content %}
   {% load crispy_forms_tags %}
   <div class="container">

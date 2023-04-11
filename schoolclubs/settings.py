@@ -66,7 +66,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
-
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-primary',
     messages.INFO: 'alert-info',
