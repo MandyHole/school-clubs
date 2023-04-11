@@ -94,7 +94,7 @@
               {% if date_request.pupil == pupil %} <li>{{ date_request.date_request }}
                 ({{ date_request.get_type_of_request_display }}): {{ date_request.get_approval_status_display }}</li>
                 {% if date_request.approval_status == '0' %} <a href="#deleteDateModal" data-toggle="modal">
-                  <button class="navy-btn-small">Cancel request </button>
+                  <button class="navy-btn-small">Cancel this request </button>
 
                 </a>                   <div id="deleteDateModal" class="modal fade">
                   <div class="modal-dialog modal-confirm">

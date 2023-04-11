@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from .models import Parent, Pupil, DateRequest, Breakfast, BreakfastRequest
 from django.contrib.auth.models import User
+from django.contrib import messages
 from .forms import PupilForm, ParentForm, EditParentForm, DateRequestForm, EditPupilForm
 from datetime import date
 from django.views.generic.edit import CreateView
@@ -230,6 +231,9 @@ def date_request(request, pupil_id):
         if date_form.is_valid():
             date_form.instance.pupil = pupil
             date_form.save()
+            messages.success(
+                request,
+                'Your date request has been submitted successfully.')
             return redirect('get_manage_booking')
 
     date_form = DateRequestForm(instance=pupil)

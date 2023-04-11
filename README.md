@@ -70,6 +70,7 @@ For the purpose of this project, all references to the name of the school have b
 ### Frameworks, Libraries & Programs Used
 <ul>
 <li><strong>Bootstrap 5.0:</strong> used to assist with the responsiveness and styling of the website.</li>
+<li><strong>J Query:</strong> used alongside Bootstrap.</li>
 <li><strong>Google Fonts:</strong> used to import the 'Quattrocento' font into the base.html file which is used on all pages.</li>
 <li><strong>Font Awesome:</strong> used in the navigation (mobile view).</li>
 <li><strong>Git:</strong> used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.</li>
@@ -79,21 +80,27 @@ For the purpose of this project, all references to the name of the school have b
 <li><strong>Adobe Illustrator:</strong> used to create the logo.</li>
 <li><strong>Django:</strong> used to help make the website more quickly and with less code.</li>
 <li><strong>Cloudinary:</strong> used to store photographs for the project</li>
+<li><strong>ICO Converter:</strong> used to create a favicon from an image created in Illustrator https://www.icoconverter.com/</li>
+
 </ul>
 
 ## Testing
 
-<strong>HTML:</strong> Tested with W3C Markup Validator
+<strong>HTML:</strong> Tested with W3C Markup Validator (no errors found)
 
-<strong>CSS:</strong> Tested with W3C CSS Validator
+<strong>CSS:</strong> Tested with W3C CSS Validator (no errors found)
 
-<strong>Javascript:</strong> Tested with https://codebeautify.org/jsvalidate
+<strong>Javascript:</strong> Tested with https://jshint.com/ (no errors found)
 
-<strong>Python:</strong> Tested with Pep8
+<strong>Python:</strong> Tested with Pep8 (no errors found)
 
 <strong>Colour contrast:</strong> Tested using https://webaim.org/resources/contrastchecker/
+<ul><li>#be9f56 (gold) passed with black on gold / vice versa</li>
+<li>#003e6b (navy) passed with white on navy / vice versa</li>
+<li>#56a0d8(light blue) passed with black / vice versa</li>
+</li></ul>
 
-### User Story Testing
+### User Story: Experience Testing
 
 <ol><li>As a Site User, I would like to be able to create an account so I can view/amend my bookings.
 <ul><li>If a user isn't currently signed in, they are given very limited options as to what they are able to do when they get to the homepage (either sign in or sign up) so that they are aware that they can create an account. Once signed in, they have two other options: Add a child or manage bookings so they can easily see by the buttons/menu that they have the facility to add and amend bookings"</li></ul></li>
@@ -117,14 +124,62 @@ For the purpose of this project, all references to the name of the school have b
 <li>As a Site Admin, I would like to know if someone makes an amendment so that I can update my record for who is attending each session.
 <ul><li>When a user adds / amends their details or requests a one-off request, the approval status is set at either 'Pending Approval' / 'Awaiting Approval' respectively. The admin can use this as a filter and then approve/decline the request as required and update their records for that session. The approval status is conveyed to the user on the "Manage Bookings" page.</li></ul>
 </li>
-<li>As a Site Admin, I would like to be able to add / remove a particular pupil from a club on a specified date so that an approved last minute cancellation or a pupil who showed up without booking can be accounted for.</li>
-<li>As a Site Admin, I would like to restrict users’ ability to amend a booking so that they can only cancel bookings that are more than one day in the future.</li>
-<li>As a Site Admin, I would like to be able to limit the dates so that people can only book dates where the club is available.</li>
+<li>As a Site Admin, I would like to be able to add / remove a particular pupil from a club on a specified date so that an approved last minute cancellation or a pupil who showed up without booking can be accounted for.<ul><li>Site Admins can add/remove pupils using the Date Request Model in the admin section of the website.</li></ul></li>
+<li>As a Site Admin, I would like to restrict users’ ability to amend a booking so that they can only cancel bookings that are more than one day in the future.<ul><li>Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of insufficient notice. </li></ul></li>
+<li>As a Site Admin, I would like to be able to limit the dates so that people can only book dates where the club is available.
+<ul><li>Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of unavailable date. </li></ul></li></li>
 </li>
 </ul>
 
 
-</ul>
+</ol>
+
+### Further Testing
+The Website was tested on Google Chrome and Safari browsers.
+
+The website was viewed on a variety of devices such as Desktop, Laptop, iPhones and tablets.
+
+A large amount of testing was done to ensure that all pages were linking correctly.
+
+A large amount of testing was done to ensure that all database additions/updates were working correctly.
+
+Testing was done to ensure that the site deployed by Heroku matched the local version on Gitpod.
+
+Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
+
+### Known Bugs
+On mobile devices, the hamburger/x menu icons jump around when clicked.
+
+
+## Credits
+
+### Code
+
+The Modal to confirm before deleting: https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=delete-confirmation-modal
+
+Bootstrap5: Bootstrap was used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+
+Django: Django was used throughout the project to help make the website more quickly and with less code.
+
+Getting a datepicker in the Date Request form: https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django
+
+Inspiration for the project, getting started with Django and in particular for displaying messages and working with views: Code Institute Django walkthrough examples
+
+Content
+All content was written by the developer.
+
+Media
+All Images were sourced from Pexels. I'd like to give a particular thanks to the following photographers:</li>
+<ul><li>pexels-alexander-mils-2103949</li>
+<li>pexels-chan-walrus-958545</li>
+<li>pexels-elviss-railijs-bitans-1448665</li>
+<li>pexels-jer-chung-2116094</li>
+<li>pexels-nicola-barts-7937469</li>
+<li>pexels-lukas-1352270</li>
+<li>pexels-sydney-troxell-718739</li>
+</li></ul>
+
 
 
 
@@ -229,19 +284,6 @@ Happy coding!
 
 
 
-<ul><li>#be9f56 (gold) passed with black on gold / vice versa</li>
-<li>#003e6b (navy) passed with white on navy / vice versa</li>
-<li>#56a0d8(light blue) passed with black / vice versa</li>
-</li></ul>
 
- with a particular thanks to the following photographers:</li>
-<ul><li>pexels-alexander-mils-2103949</li>
-<li>pexels-chan-walrus-958545</li>
-<li>pexels-elviss-railijs-bitans-1448665</li>
-<li>pexels-jer-chung-2116094</li>
-<li>pexels-nicola-barts-7937469</li>
-<li>pexels-lukas-1352270</li>
-<li>pexels-sydney-troxell-718739</li>
-</li></ul>
 
-<li>The colours were tested for contrast using https://webaim.org/resources/contrastchecker/</li>
+ 
