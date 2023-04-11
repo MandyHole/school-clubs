@@ -33,7 +33,7 @@
         <div class="logo">
           <a class="navbar-brand" href="{% url 'home' %}">{% load static %}<img class="logo"
               src="{% static 'media/School-Clubs-white-logo.png' %}" alt="School Clubs Logo"></a></div>
-        <div class="nav-content"> <button class="navbar-toggler remove-shadow" type="button" data-bs-toggle="collapse"
+        <div class="nav-content"> <button class="navbar-toggler remove-shadow toggler-position" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation" onclick="navIcon()">
             <span class="navbar-toggler-icon" id="sc-menu-icon"><i class="fa-solid fa-bars white-text"></i></span>
@@ -101,7 +101,7 @@
     function navIcon() {
 
       if (document.getElementById("sc-menu-icon").innerHTML == '<i class="fa-solid fa-bars white-text"></i>') {
-        document.getElementById("sc-menu-icon").innerHTML = '<i class="fa-solid fa-x white-text"></i>'
+        document.getElementById("sc-menu-icon").innerHTML = '<i class="fa-solid fa-x blue-text"></i>'
       } else {
         document.getElementById("sc-menu-icon").innerHTML = '<i class="fa-solid fa-bars white-text">'
       }

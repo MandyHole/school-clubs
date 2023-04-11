@@ -17,6 +17,7 @@ For the purpose of this project, all references to the name of the school have b
 </li>
 <li>As a Site User, I would like my child’s year to be automatically updated at the start of the next academic year so that I don't have to do it manually.</li>
 <li>As a Site User, I would like past dates to automatically disappear from the booking option so that it is easier to find the date that I want.</li>
+<li>As a Site User I would like to know the status of my requests so I know whether or not the sessions have been successful booked.</li>
 </ul></ul>
 <ul><li>Site Administrators</li><ul><li>As a Site Admin, I would like to be able to see who is signed up for a particular date so that I can prepare resources accordingly.</li>
 <li>As a Site Admin, I would like to easily move pupils up a Year Group at the start of the next academic year and not allow parents to amend this field so that I know the Year Groups remain accurate.
@@ -116,6 +117,8 @@ For the purpose of this project, all references to the name of the school have b
 <li>As a Site User, I would like past dates to automatically disappear from the booking option so that it is easier to find the date that I want.<ul>
 <li>The date request form has been designed using a date picker that defaults to the current date. Should they select a date that is in the past or doesn't give the 48 hours required notice, the admins will have the opportunity to deny the request based on insufficient notice. </li></ul>
 </li>
+<li>As a Site User I would like to know the status of my requests so I know whether or not the sessions have been successful booked.<ul>
+<li>Messages appear that show when a form is successfully submitted. On the "Manage Booking" page, you can see the status of any requests and whether they are pending approval, declined (with a reason) or approved.</li></ul></li>
 <li>As a Site Admin, I would like to be able to see who is signed up for a particular date so that I can prepare resources accordingly.
 <ul><li>In the admin area, under the Date Request model, admins can order the list based on the date of the request to see if there are any approved cancellations/additional date requests for any particular date. That, in conjunction with the regular attendees, which can be found in the pupil model by filtering by session, will provide all of the pupils who should be at a particular session.</li></ul></li>
 <li>As a Site Admin, I would like to easily move pupils up a Year Group at the start of the next academic year and not allow parents to amend this field so that I know the Year Groups remain accurate.
@@ -158,11 +161,13 @@ On mobile devices, the hamburger/x menu icons jump around when clicked.
 
 The Modal to confirm before deleting: https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=delete-confirmation-modal
 
-Bootstrap5: Bootstrap was used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+Bootstrap5: Bootstrap was used throughout the project mainly to make site responsive using the Bootstrap Grid System, the nav bar as well as for minor styling (e.g. message formats).
 
 Django: Django was used throughout the project to help make the website more quickly and with less code.
 
 Getting a datepicker in the Date Request form: https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django
+
+Getting custom messages to appear upon form submissioins: https://www.csestack.org/display-messages-form-submit-django/
 
 Inspiration for the project, getting started with Django and in particular for displaying messages and working with views: Code Institute Django walkthrough examples
 

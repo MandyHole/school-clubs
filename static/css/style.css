@@ -86,14 +86,24 @@ select {
     margin-left: 15px;
 }
 
+.toggler-position {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 25px;
+}
 .navbar-transparency {
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 3% 0;
+    padding: 1% 0;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 @media (max-width: 991px) {
     .navbar-transparency {
         margin-top: -5px;
+        padding-right: 100px;
     }
   }
 
@@ -129,6 +139,10 @@ li>a:hover{
 .white-text {
     color: white;
     text-shadow: 2px 2px #575756;
+}
+
+.blue-text {
+    color: #003e6b;
 }
 
 .center-align-text {
