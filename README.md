@@ -89,7 +89,7 @@ For the purpose of this project, all references to the name of the school have b
 
 <strong>HTML:</strong> Tested with W3C Markup Validator (no errors found)
 
-<strong>CSS:</strong> Tested with W3C CSS Validator (no errors found)
+<strong>CSS:</strong> Tested with W3C CSS Validator (no errors found) https://jigsaw.w3.org/css-validator/
 
 <strong>Javascript:</strong> Tested with https://jshint.com/ (no errors found)
 
@@ -145,6 +145,8 @@ The website was viewed on a variety of devices such as Desktop, Laptop, iPhones 
 A large amount of testing was done to ensure that all pages were linking correctly.
 
 A large amount of testing was done to ensure that all database additions/updates were working correctly.
+
+A large amount of testing was done to ensure that only users who were logged in had access to certain content. Also, the user had to match the pupil to view/amend personal details.
 
 Testing was done to ensure that the site deployed by Heroku matched the local version on Gitpod.
 

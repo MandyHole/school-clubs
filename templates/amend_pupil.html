@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+<!-- Hero Area  -->
 {% block hero%} <div class="hero-edit-child hero-image hero-header-big">{% endblock %}
 
   {% block content %}
@@ -9,11 +10,11 @@
       <div class="col hero-text-position">
         {% if user.is_authenticated %}
         {% if pupil.user_info == user %}
-        
-          <h1 class="white-text large-text">Update {{ pupil }}'s Regular Bookings</h1>
-        
+
+        <h1 class="white-text large-text">Update {{ pupil }}'s Regular Bookings</h1>
+
         {% else %}
-        <h1 class="white-text large-text">You need to login to the correct account before you can edit this booking</h1>
+        <h1 class="white-text large-text">You need to login to the correct account before you can edit this booking.</h1>
 
         {% endif %}
         {% else %}
@@ -27,8 +28,8 @@
   </div>
 
 </div>
-</div>
 
+<!-- Body Area -->
 {% if user.is_authenticated %}
 {% if pupil.user_info == user %}
 <div class="gold-background">
@@ -38,14 +39,15 @@
         <form method="POST">
           {% csrf_token %}
           {{ form.as_p }}
-            <p>
-              <button type="submit" class="gold-btn">Update Details</button>
-            </p>
+          <p>
+            <button type="submit" class="gold-btn">Update Details</button>
+          </p>
 
         </form>
       </div>
     </div>
-   </div>
   </div>
-</div>{% endif %}{% endif %}
+</div>
+{% endif %}
+{% endif %}
 {% endblock %}

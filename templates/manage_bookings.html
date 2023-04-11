@@ -1,13 +1,10 @@
 {% extends "base.html" %}
 
+<!-- Hero Area -->
 {% block hero %}
 <div class="hero-manage hero-header-small hero-image">
-
   {% endblock %}
-
   {% block content %}
-
-
   <div class="container">
     <div class="row">
       <div class="col hero-text-position">
@@ -15,16 +12,16 @@
         <h1 class="white-text large-text">Manage Your Bookings</h1>
         {% else %}
         <h1 class="white-text large-text">Please login to see this page</h1>
-
         <div class="d-grid gap-2 col-6 mx-auto">
           <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
-
         </div>
         {% endif %}
       </div>
     </div>
   </div>
 </div>
+
+<!-- Body Area -->
 <div class="gold-background">
   <div class="container-fluid">
     <div class="row">
@@ -57,7 +54,6 @@
               {% if pupil.s_thurs == True %} <li>Thursday</li>{% endif %}
               {% if pupil.s_fri == True %} <li>Friday</li>{% endif %}
             </ul>
-
             {% else %}
               <h6><em>No supper slots booked</em></h6>
             {% endif %}
@@ -109,6 +105,5 @@
     </div>
   </div>
 </div>
-
 {% endif %}
 {% endblock %}

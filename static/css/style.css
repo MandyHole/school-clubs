@@ -21,6 +21,7 @@ input {
 select {
     margin: 15px 0;
 }
+
 /* hero styles */
 
 .hero-header-big {
@@ -77,7 +78,6 @@ select {
     background-position: center;
 }
 
-
 /* navigation styles */
 
 .logo {
@@ -92,6 +92,7 @@ select {
     top: 0;
     right: 25px;
 }
+
 .navbar-transparency {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1% 0;
@@ -99,13 +100,6 @@ select {
     top: 0;
     right: 0;
 }
-
-@media (max-width: 991px) {
-    .navbar-transparency {
-        margin-top: -5px;
-        padding-right: 100px;
-    }
-  }
 
 .remove-shadow:focus {
     box-shadow: none;
@@ -121,6 +115,7 @@ li>a {
     text-align: right;
     text-decoration: none;
 }
+
 li>a:hover{
     color: #575756;
 }
@@ -129,6 +124,8 @@ li>a:hover{
     font-size: 3rem;
     text-align: right;
 }
+
+/* Font styles */
 
 .large-text {
     font-size: 4rem;
@@ -149,6 +146,16 @@ li>a:hover{
     text-align: center;
 }
 
+.applicable {
+    font-size: smaller;
+    font-style: italic;
+}
+
+.pupil-title {
+    margin-bottom: 0.9rem;
+    color: black;
+}
+
 /* button styles */
 
 .navy-btn {
@@ -161,6 +168,7 @@ li>a:hover{
     font-size: 1.3rem;
     text-transform: uppercase;
 }
+
 .navy-btn:hover {
     background-color: #fff;
     color: #003e6b;
@@ -205,17 +213,17 @@ li>a:hover{
     margin-top: 15px;
 }
 
-/* footer styles */
+/* Background / Box Styles */
 
-.footer {
-    background-color: #003e6b;
-    color: #fff;
-    padding-top: 4px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.gold-background {
+    background-color: #be9f56;
+    padding-bottom: 100px;
+    padding-top: 25px;
 }
 
 .box-heading-background {
@@ -224,7 +232,7 @@ li>a:hover{
     color: #fff;
 }
 
-.box-heading-background >p > a {
+.box-heading-background > p > a {
     color:antiquewhite;
     text-decoration: underline;
 }
@@ -244,18 +252,6 @@ li>a:hover{
     text-decoration: underline;
 }
 
-
-.gold-background {
-    background-color: #be9f56;
-    padding-bottom: 100px;
-    padding-top: 25px;
-}
-
-.row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
 .box-body-background {
     background-color: #56a0d8;
     color: #000;
@@ -267,24 +263,13 @@ li>a:hover{
     text-align: center;
     font-size: 2rem;
 }
-@media (max-width: 790px) {
-    .hide-element-mobile {
-        display: none;
-    }
-  }
 
-.accordian-item > h2 {
-    margin: 0;
-  }
-
-.login-notice > h2 {
-    color: black;
-}
-
+/* Modal Styles */
 .modal-confirm {		
 	color: #636363;
 	width: 400px;
 }
+
 .modal-confirm .modal-content {
 	padding: 20px;
 	border-radius: 5px;
@@ -292,23 +277,28 @@ li>a:hover{
 	text-align: center;
 	font-size: 14px;
 }
+
 .modal-confirm .modal-header {
 	border-bottom: none;   
 	position: relative;
 }
+
 .modal-confirm h4 {
 	text-align: center;
 	font-size: 26px;
 	margin: 30px 0 -10px;
 }
+
 .modal-confirm .close {
 	position: absolute;
 	top: -5px;
 	right: -2px;
 }
+
 .modal-confirm .modal-body {
 	color: #999;
 }
+
 .modal-confirm .modal-footer {
 	border: none;
 	text-align: center;		
@@ -316,9 +306,11 @@ li>a:hover{
 	font-size: 13px;
 	padding: 10px 15px 25px;
 }
+
 .modal-confirm .modal-footer a {
 	color: #999;
-}		
+}
+
 .modal-confirm .icon-box {
 	width: 80px;
 	height: 80px;
@@ -328,12 +320,14 @@ li>a:hover{
 	text-align: center;
 	border: 3px solid #56a0d8;
 }
+
 .modal-confirm .icon-box i {
 	color: #56a0d8;
 	font-size: 46px;
 	display: inline-block;
 	margin-top: 13px;
 }
+
 .modal-confirm .btn, .modal-confirm .btn:active {
 	color: #fff;
 	border-radius: 4px;
@@ -347,25 +341,46 @@ li>a:hover{
 	border-radius: 3px;
 	margin: 0 5px;
 }
+
 .modal-confirm .btn-secondary {
 	background: #c1c1c1;
 }
+
 .modal-confirm .btn-secondary:hover, .modal-confirm .btn-secondary:focus {
 	background: #a8a8a8;
 }
+
 .modal-confirm .btn-danger {
 	background: #56a0d8;
 }
+
 .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
 	background: #003e6b
 }
 
-.applicable {
-    font-size: smaller;
-    font-style: italic;
+/* footer styles */
+
+.footer {
+    background-color: #003e6b;
+    color: #fff;
+    padding-top: 4px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
-.pupil-title {
-    margin-bottom: 0.9rem;
-    color: black;
-}
+/* Media Queries */
+@media (max-width: 790px) {
+    .hide-element-mobile {
+        display: none;
+    }
+  }
+
+@media (max-width: 991px) {
+    .navbar-transparency {
+        margin-top: -5px;
+        padding-right: 100px;
+    }
+  }

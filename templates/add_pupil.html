@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+<!-- Hero Area -->
 {% block hero%} <div class="hero-add-child hero-header hero-image">{% endblock %}
 
   {% block content %}
@@ -23,30 +24,32 @@
     </div>
   </div>
 </div>
+
+<!-- Main body area -->
 <div class="gold-background">
   <div class="container-fluid">
     <div class="row">
       {% if user.is_authenticated%}
       <div class="col-md-6 offset-md-3 box-heading-background">
-        <p>Use this form to tell us about a child who would like to attend a breakfast or supper club who has not already booked via this website. You can sign them up for regular slots using this page, but please note that any one-off requests need to be made once you have submitted your child's details here. </p>
+        <p>Use this form to tell us about a child who would like to attend a breakfast or supper club who has not
+          already booked via this website. You can sign them up for regular slots using this page, but please note that
+          any one-off requests need to be made once you have submitted your child's details here. </p>
 
         <form method="post">
           <!-- | crispy  -->
           {{ add_pupil_form | crispy }}
           {% csrf_token %}
-          
+
           <button type="submit" class="btn gold-btn btn-lg">Submit</button>
-      </form>
-            {% else %}
-          <h1 class="white-text large-text">Login to add a pupil</h1>
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
-          </div>
+        </form>
+      {% else %}
+        <h1 class="white-text large-text">Login to add a pupil</h1>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
         </div>
-        {% endif %}
       </div>
+      {% endif %}
     </div>
-</div>
   </div>
 </div>
 

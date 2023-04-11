@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
+<!-- Hero content -->
 {% block hero%} <div class="hero hero-image hero-header-big">{% endblock %}
 
   {% block content %}
   <div class="container">
     <div class="row">
+        <!-- Page Heading -->
       <div class="col hero-text-position">
         {% if user.is_authenticated %}
         <h1 class="white-text large-text">Book a Breakfast and Supper Club</h1>
@@ -13,6 +15,7 @@
         {% endif %}
       </div>
     </div>
+    <!-- Hero Buttons -->
     <div class="container">
       <div class="row">
 
@@ -43,11 +46,12 @@
     </div>
   </div>
 </div>
-</div>
-</div>
+
+<!-- Body content -->
 <div class="row gold-background">
   <div class="container">
     <div class="row">
+      <!-- Breakfast Club Details -->
       <div class="col-md-6">
         <div class="box-heading-background">
           <h2>About Breakfast Club</h2>
@@ -81,7 +85,7 @@
           {% endif %}
         </div>
       </div>
-
+      <!-- Supper Club Details -->
       <div class="col-md-6">
         <div class="box-heading-background">
           <h2>About Supper Club</h2>
