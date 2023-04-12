@@ -128,7 +128,7 @@ li>a:hover{
 /* Font styles */
 
 .large-text {
-    font-size: 4rem;
+    font-size: 55px;
     text-align: center;
     padding-top: 50px;
 }
@@ -382,5 +382,15 @@ li>a:hover{
     .navbar-transparency {
         margin-top: -5px;
         padding-right: 100px;
+    }
+
+    li>a {
+        line-height: 5rem;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .large-text{
+        font-size: 45px;
     }
   }

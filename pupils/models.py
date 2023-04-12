@@ -6,6 +6,14 @@ from django.core.exceptions import ValidationError
 # Create your models here.
 
 
+def confirmation_check(value):
+    if value is False:
+        raise ValidationError(
+            _('You must tick to confirm'),
+            params={'value': value},
+            )
+
+
 class Pupil(models.Model):
     YEAR_GROUPS = (
         ('0', 'Reception'),
@@ -78,10 +86,8 @@ class Pupil(models.Model):
         null=False, blank=False, default=False, verbose_name="Friday Supper")
     confirmation = models.BooleanField(
         verbose_name='I am aware it is £2/Breakfast and £2.50/Supper',
-        default=True,
-        null=False,
-        blank=False,
-        # validators=[confirmation_check()]
+        default=False,
+        validators=[confirmation_check]
     )
     booking_approval_status = models.CharField(
         max_length=1,
@@ -96,14 +102,6 @@ class Pupil(models.Model):
 
     def __str__(self):
         return f'{self.first_name_of_pupil} {self.surname_of_pupil}'
-
-
-def confirmation_check(value):
-    if value is False:
-        raise ValidationError(
-            _('You must tick to confirm'),
-            params={'value': value},
-            )
 
 
 class DateRequest(models.Model):

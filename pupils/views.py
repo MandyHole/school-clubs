@@ -85,6 +85,8 @@ def edit_pupil(request, pupil_id):
 
 
 def delete_date(request, cancel_id):
+    print(cancel_id, "<==== id")
+    print(request, "<=== request")
     cancel = get_object_or_404(DateRequest, id=cancel_id)
     cancel.delete()
     return redirect('get_manage_booking')

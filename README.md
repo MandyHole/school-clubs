@@ -1,5 +1,5 @@
-![School Clubs logo]{% static 'media/School-Clubs-white-logo.png' %}
-
+<img 
+              src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1677704293/School-Clubs-logo_iv88ip.png" width = 25% alt="School Clubs Logo"></a>
 ## School Clubs Website
 
 This website is designed for a particular independent prep school in the UK who offer a Breakfast and Supper Club, offering functionality for both parents and school administrators. Parents are able to book their child/children onto regular sessions (eg every Monday morning), edit their contact details as well as request one-off additions or cancellations. Administrators are able to see who has recently requested a change requiring approval, edit details if needed and approve/deny requests. 
@@ -87,16 +87,31 @@ For the purpose of this project, all references to the name of the school have b
 
 ## Testing
 
-<strong>HTML:</strong> Tested with W3C Markup Validator (no errors found)
+<strong>HTML:</strong> Tested the following pages with W3C Markup Validator (no errors found although I initially had some errors due to location of div elements in relation to python if / for statements, which I subsequently modified)
+<ul>
+<li>account/login.html</li>
+<li>account/signup.html</li>
+<li>account/logout.html</li>
+<li>add_pupil.html</li>
+<li>amend_pupil.html</li>
+<li>date_request.html</li>
+<li>index.html</li>
+<li>manage_bookings.html</li>
+</ul>
 
-<strong>CSS:</strong> Tested with W3C CSS Validator (no errors found) https://jigsaw.w3.org/css-validator/
+<strong>CSS:</strong> Tested static/css/style.css with W3C CSS Validator using the direct input method (no errors found) https://jigsaw.w3.org/css-validator/
 
-<strong>Javascript:</strong> Tested with https://jshint.com/ (no errors found)
+<strong>Javascript:</strong> Tested static/javascript/script.js with https://jshint.com/ (no errors found)
 
 <strong>Python:</strong> Tested the pages I created/used with Pycode Style (no errors found). See steps below:
 <ul><li>In the terminal, check you have pycodestyle installed by running: pip install pycodestyle</li>
-<li>In the terminal, run pycodestyle --first *ADD RELATIVE FILEPATH HERE* for each of the pages you wish to check until no errors are found (see examples below)</li><ul><li>pycodestyle --first pupils/models.py
-</li><li>pycodestyle --first schoolclubs/urls.py</li><li>pycodestyle --first schoolclubs/settings.py (Please note that some pre-existing code from Django on settings.py failed due to line length, but all code that I added passed)</li></ul>
+<li>In the terminal, run pycodestyle --first *ADD RELATIVE FILEPATH HERE* for each of the pages you wish to check until no errors are found (see examples below)</li><ul>
+<li>pycodestyle --first pupils/models.py</li>
+<li>pycodestyle --first pupils/admin.py</li>
+<li>pycodestyle --first pupils/forms.py</li>
+<li>pycodestyle --first pupils/views.py</li>
+<li>pycodestyle --first schoolclubs/urls.py</li>
+<li>pycodestyle --first schoolclubs/settings.py (Please note that some pre-existing code from Django on settings.py failed due to line length, but all code that I added passed)</li></ul>
 </ul>
 
 <strong>Colour contrast:</strong> Tested using https://webaim.org/resources/contrastchecker/
@@ -158,7 +173,28 @@ Friends and family members were asked to review the site and documentation to po
 
 
 ### Known Bugs
-On mobile devices, the hamburger/x menu icons jump around when clicked.
+On mobile devices, the hamburger/x menu icons move slightly when clicked.
+
+
+## Deployment
+This project was deployed through Heroku (live link found here: https://school-clubs.herokuapp.com/) using the following steps:
+<ol>
+<li>Login / Sign up to Heroku</li>
+<li>Click New -- Create New App</li>
+<li>Name your app (must be unique), select your nearest revious and click “Create app” to confirm.</li>
+<li>Go to settings and add the following Key/Data information (which match the information in your env.py file that should be set up to be ignored by git), to the config vars:<ul>
+<li>DATABASE_URL (from your database, eg elephant sql)</li>
+<li>SECRET_KEY</li>
+<li>CLOUDINARY_URL (from your Cloudinary account)</li>
+<li>PORT (8000)</li>
+<li>DISABLE_COLLECTSTATIC (1) if you haven't added static files yet. NB This can be removed once you deploy your site</li>
+</ul></li>
+<li>Add your Heroku app and local host to the 'Allowed Hosts' section of the settings.py file (example below)<ul><li>ALLOWED_HOSTS = ["school-clubs.herokuapp.com", "localhost"]
+</li></ul></li>
+<li>Create a Profile in the main directory with the following info: web: gunicorn schoolclubs.wsgi where 'schoolclubs' is the name of your project</li>
+<li>Add/Commit/Push all changes to Github</li>
+<li>Click Deploy in the Heroku App dashboard - then deploy via Github - connect to the repository, scroll down and click on deploy branch</li>
+</ol>
 
 
 ## Credits
@@ -190,111 +226,3 @@ All Images were sourced from Pexels. I'd like to give a particular thanks to the
 <li>pexels-lukas-1352270</li>
 <li>pexels-sydney-troxell-718739</li>
 </li></ul>
-
-
-
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
-
-
-
-
-
- 
