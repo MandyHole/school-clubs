@@ -2,12 +2,14 @@
               src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1677704293/School-Clubs-logo_iv88ip.png" width = 25% alt="School Clubs Logo"></a>
 ## School Clubs Website
 
-This website is designed for a particular independent prep school in the UK who offer a Breakfast and Supper Club, offering functionality for both parents and school administrators. Parents are able to book their child/children onto regular sessions (eg every Monday morning), edit their contact details as well as request one-off additions or cancellations. Administrators are able to see who has recently requested a change requiring approval, edit details if needed and approve/deny requests. 
+This responsive website is designed based on requirements of a particular independent prep school in the UK who offer a Breakfast and Supper Club, to give the necessary functionality for both parents and school administrators. Parents are able to book their child/children onto regular sessions (eg every Monday morning), edit their contact details as well as request one-off additions or cancellations. Administrators are able to see who has recently requested a change requiring approval, edit details if needed and approve/deny requests. 
 
 For the purpose of this project, all references to the name of the school have been removed although their overall branding has been used. In a real-world scenario, the school’s logo would be used in the main menu to reassure the users that it is a legitimate website.
 
+## Contents
+<a href="#UX" alt="Jump to User Experience">User Experience</a>
 
-## User Experience
+<h2 id="UX">User Experience</h2>
 
 <ul><li><strong>User Stories</strong></li>
 <ul><li>Site Users</li><ul><li>As a Site User, I would like to be able to create an account so I can view/amend my bookings.</li>
@@ -122,6 +124,27 @@ For the purpose of this project, all references to the name of the school have b
 
 ### User Story: Experience Testing
 
+| Goals | How are they achieved? | Image |
+| :--- | :--- | :--- |
+| `First Time Visitors` |
+|  |  |  |
+| Understand what the site is for and how to navigate the site. | A description of what the site is is included on the home page. | :--- |
+| Register for an account. | The description on the home page encourages new users to register for an account. A register link is displayed on the navbar if a user is not logged in. | :--- |
+| Search for books | Users are always shown the search link on the navbar regardless of their login status. | :--- |
+|`Returning Visitors`|
+|  |  |  |
+| Log in to my account | If a user is not logged into an account, a login link is provided on the navbar. | :--- |
+| Create a bookshelf | The create a bookshelf button is displayed prominently at the top of the bookshelves page. | :--- |
+| Edit a bookshelf | When a user views their bookshelves on the bookshelves page, they are given the option to edit their bookshelf. | :--- |
+| Delete a bookshelf | When a user views their bookshelves on the bookshelves page, they are given the option to delete their bookshelf. When the user selects delete, a modal will pop up to confirm deletion and to let the user know that all books shelved on that bookshelf will also be deleted. | :--- |
+| Create a book review | When a user searches for a book, they are shown the results of the search and each result has a shelve this book button. When the user clicks on this they are redirected to the review page. | :--- |
+| Edit a book review | When a user views their books, each book has an edit button, which will take the user to the edit review page with the books information pre-populated. | :--- |
+| Delete a book review | When a user views their books, each book has a delete button, when the user clicks this a modal will pop up to confirm the user wishes to delete the book. | :--- |
+|`Admin User` |
+|  |  |  |
+| Remove any reviews that are offensive | Due to time constraints, I have had to place this item in the future implementations list. |  |
+
+
 <ol><li>As a Site User, I would like to be able to create an account so I can view/amend my bookings.
 <ul><li>If a user isn't currently signed in, they are given very limited options as to what they are able to do when they get to the homepage (either sign in or sign up) so that they are aware that they can create an account. Once signed in, they have two other options: Add a child or manage bookings so they can easily see by the buttons/menu that they have the facility to add and amend bookings"</li></ul></li>
 <li>As a Site User, I would like to be able to block book specified days so that I don’t have to select dates individually.
@@ -131,15 +154,15 @@ For the purpose of this project, all references to the name of the school have b
 <li>Users aren't asked to provide an email when initially adding a child as the information is pulled from their user login information. However, they have the option to update their email when they amend their child in case it changes in future. </li></ul>
 </li>
 <li>As a Site User, I would like my child’s year to be automatically updated at the start of the next academic year so that I don't have to do it manually.
-<ul><li>Admininstrators can make the Year Group go up a year in the admin panel (using the pupil model) by selecting all pupils and using the action "Advance year". After Year 6, the clubs would no longer be available so those pupils' records would be deleted during the advancement process. I didn't give users the ability to amend a pupil's year as it isn't something that would need to be changed apart from during the summer when the admins will run the action. Giving them the ability would create a risk that parents would advance it in the summer before the admins had a chance. </li></ul>
+<ul><li>Admininstrators can make the Year Group go up a year in the admin panel (using the pupil model) by selecting all pupils and using the action "Advance year". After Year 6, the clubs would no longer be available so those pupils' records would be deleted during the advancement process. I didn't give users the ability to amend a pupil's year as it isn't something that would need to be changed apart from during the summer when the admins will run the action. By allowing users this ability, there would be a risk that parents would advance it in the summer before the admins had a chance, which would then make it inaccurate when the admin ran the function. </li></ul>
 </li>
 <li>As a Site User, I would like past dates to automatically disappear from the booking option so that it is easier to find the date that I want.<ul>
-<li>The date request form has been designed using a date picker that defaults to the current date. Should they select a date that is in the past or doesn't give the 48 hours required notice, the admins will have the opportunity to deny the request based on insufficient notice. </li></ul>
+<li>The date request form has been designed using a date picker that defaults to the current date. Should they select a date that is in the past or doesn't give the 48 hours required notice, the admins will have the opportunity to deny the request based on insufficient notice. Once the term has ended, admins would delete all the requested dates for that term.</li></ul>
 </li>
-<li>As a Site User I would like to know the status of my requests so I know whether or not the sessions have been successful booked.<ul>
+<li>As a Site User I would like to know the status of my requests so I know whether or not the sessions have been successfully booked.<ul>
 <li>Messages appear that show when a form is successfully submitted. On the "Manage Booking" page, you can see the status of any requests and whether they are pending approval, declined (with a reason) or approved.</li></ul></li>
 <li>As a Site Admin, I would like to be able to see who is signed up for a particular date so that I can prepare resources accordingly.
-<ul><li>In the admin area, under the Date Request model, admins can order the list based on the date of the request to see if there are any approved cancellations/additional date requests for any particular date. That, in conjunction with the regular attendees, which can be found in the pupil model by filtering by session, will provide all of the pupils who should be at a particular session.</li></ul></li>
+<ul><li>In the admin area, under the Date Request model, admins can order the list based on the date of the request to see if there are any approved cancellations/additional date requests for any particular date. That, in conjunction with the regular attendees, which can be found in the pupil model by filtering by session, will provide all of the pupils who should be at a particular session. In an ideal world, this would be streamlined better and cause less administrative work.</li></ul></li>
 <li>As a Site Admin, I would like to easily move pupils up a Year Group at the start of the next academic year and not allow parents to amend this field so that I know the Year Groups remain accurate.
 <ul><li>Admininstrators can make the Year Group go up a year in the admin panel (using the pupil model) by selecting all pupils and using the action "Advance year". After Year 6, the clubs would no longer be available so those pupils' records would be deleted during the advancement process. I didn't give users the ability to amend a pupil's year as it isn't something that would need to be changed apart from during the summer when the admins will run the action. Giving them the ability would create a risk that parents would advance it in the summer before the admins had a chance. </li></ul>
 </li>
@@ -171,6 +194,11 @@ Testing was done to ensure that the site deployed by Heroku matched the local ve
 
 Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
+### Key Fixed Bugs
+
+The modal to confirm deletion was deleting the wrong record. This was because it was based on an ID that wasn't unique so it would delete the first record each time. Adding the variable for the date request id to the Modal's name and reference in the for loop fixed this issue (with thanks to my mentor for the support) with this.
+
+The form to submit the date request would reject dates in an incorrect format without giving the user any feedback as to why their submission didn't work. Adding a date picker put the date in the correct format to make it user friendly and obvious to the user.
 
 ### Known Bugs
 On mobile devices, the hamburger/x menu icons move slightly when clicked.

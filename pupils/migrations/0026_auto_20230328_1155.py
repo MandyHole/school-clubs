@@ -24,9 +24,9 @@ class Migration(migrations.Migration):
             name='type_of_request',
             field=models.CharField(choices=[('0', 'Request an additional breakfast'), ('1', 'Request an additional supper'), ('2', 'Cancel existing breakfast'), ('3', 'Cancel existing supper')], max_length=2),
         ),
-        migrations.AlterField(
-            model_name='daterequest',
-            name='why_declined',
-            field=models.CharField(choices=[('0', 'Awaiting Decision'), ('1', 'Club unavailable on requested date'), ('2', 'Insufficient notice')], default='0', max_length=2),
-        ),
+        # migrations.AlterField(
+        #     model_name='daterequest',
+        #     name='why_declined',
+        #     field=models.CharField(choices=[('0', 'Awaiting Decision'), ('1', 'Club unavailable on requested date'), ('2', 'Insufficient notice')], default='0', max_length=2),
+        # ),
     ]

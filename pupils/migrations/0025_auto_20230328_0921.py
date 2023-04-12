@@ -15,9 +15,9 @@ class Migration(migrations.Migration):
             name='approval_status',
             field=models.CharField(choices=[('0', 'Awaiting Approval'), ('1', 'Approved'), ('2', 'Declined')], default='0', max_length=1),
         ),
-        migrations.AddField(
-            model_name='daterequest',
-            name='why_declined',
-            field=models.CharField(choices=[('0', 'Awaiting Decision'), ('1', 'Club unavailable on requested date'), ('2', 'Insufficient notice')], default='0', max_length=1),
-        ),
+        # migrations.AddField(
+        #     model_name='daterequest',
+        #     name='why_declined',
+        #     field=models.CharField(choices=[('0', 'Awaiting Decision'), ('1', 'Club unavailable on requested date'), ('2', 'Insufficient notice')], default='0', max_length=1),
+        # ),
     ]

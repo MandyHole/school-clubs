@@ -12,6 +12,7 @@ class PupilForm(forms.ModelForm):
     class Meta:
         model = Pupil
         fields = (
+            'confirmation',
             'first_name_of_pupil',
             'surname_of_pupil',
             'year_gp',
@@ -27,7 +28,6 @@ class PupilForm(forms.ModelForm):
             's_wed',
             's_thurs',
             's_fri',
-            'confirmation',
             )
 
     def __init__(self, *args, **kwargs):
@@ -35,6 +35,7 @@ class PupilForm(forms.ModelForm):
         self.fields['b_mon'].legend = "Select your regular slots"
 
     def clean_confirmation(self):
+        print("This is from the forms page")
         confirmation = self.cleaned_data.get('confirmation')
         if confirmation is False:
             raise forms.ValidationError('This field is required')

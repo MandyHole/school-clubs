@@ -52,15 +52,16 @@ class AddPupil(View):
                 'Your child has been added successfully.')
             return redirect('get_manage_booking')
         else:
-            add_pupil_form = PupilForm()
-
-        return render(
-            request,
-            '../templates/manage_bookings.html',
-            {
-                "add_pupil_form": PupilForm()
-            },
-        )
+            messages.error(
+                request,
+                'Please confirm you understand the charges')
+            return render(
+                request,
+                '../templates/add_pupil.html',
+                {
+                    "add_pupil_form": pupil_form
+                },
+            )
 
 
 def edit_pupil(request, pupil_id):
@@ -107,6 +108,10 @@ def date_request(request, pupil_id):
                 request,
                 'Your date request has been submitted successfully.')
             return redirect('get_manage_booking')
+        else:
+            messages.warning(
+                request,
+                'Please try again with the date in the correct format')
 
     date_form = DateRequestForm(instance=pupil)
     context = {

@@ -13,6 +13,8 @@ h2 {
     margin-bottom: 0;
 }
 
+/* Forms */
+
 input {
     color:#003e6b;
     margin: 15px 0;
@@ -20,6 +22,10 @@ input {
 
 select {
     margin: 15px 0;
+}
+
+label.form-check-label {
+    margin-bottom: 15px;
 }
 
 /* hero styles */
@@ -392,5 +398,8 @@ li>a:hover{
   @media (max-width: 390px) {
     .large-text{
         font-size: 45px;
+    }
+    label.form-check-label {
+        margin-bottom: 30px;
     }
   }
