@@ -37,8 +37,8 @@
           <div class="card-body">
             <h2 class="pupil-title">{{ pupil.first_name_of_pupil }} {{ pupil.surname_of_pupil }},
               {{ pupil.get_year_gp_display }}</h2>
+              <p class="center-align-text">Booking Status: {{ pupil.get_booking_approval_status_display }}</p>
             {% if pupil.b_mon == True or pupil.b_tues == True or pupil.b_wed == True or pupil.b_thurs == True or pupil.b_fri == True %}
-            <p class="center-align-text">Booking Status: {{ pupil.get_booking_approval_status_display }}</p>
             <h6 class="card-subtitle mb-2"><strong>Regular Breakfast Slots: </strong></h6>
             <ul>
               {% if pupil.b_mon == True %}<li>Monday</li>{% endif %}

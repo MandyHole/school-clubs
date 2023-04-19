@@ -109,16 +109,8 @@ class DateRequest(models.Model):
         ('2', 'Declined: Club unavailable on requested date'),
         ('3', 'Declined: Insufficient notice')
     )
-    DECLINED_REASONING = (
-        ('0', 'Awaiting Decision'),
-        ('1', 'Club unavailable on requested date'),
-        ('2', 'Insufficient notice')
-    )
     approval_status = models.CharField(
         max_length=2, choices=APPROVAL_CHOICES, default='0')
-    # why_declined = models.CharField(
-    #     max_length=2, choices=DECLINED_REASONING, default='0'
-    # )
     type_of_request = models.CharField(
         max_length=2, choices=REQUEST_TYPES)
     approved = models.BooleanField(null=False, blank=False, default=False)
@@ -126,3 +118,8 @@ class DateRequest(models.Model):
         auto_now_add=True,
         verbose_name="Date request was made")
     pupil = models.ForeignKey(Pupil, on_delete=models.CASCADE)
+    cost = models.DecimalField(
+        default=0,
+        max_digits=5,
+        decimal_places=2
+    )

@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'pupils',
+    'import_export',
+    'admin_totals',
 ]
 
 SITE_ID = 1

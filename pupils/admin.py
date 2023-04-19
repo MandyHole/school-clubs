@@ -1,5 +1,8 @@
 from django.contrib import admin
+from admin_totals.admin import ModelAdminTotals
 from .models import Pupil, DateRequest
+from django.db.models import Sum, Avg
+from django.db.models.functions import Coalesce
 
 # Register your models here.
 
@@ -66,24 +69,56 @@ class DateRequestAdmin(admin.ModelAdmin):
         'date_request',
         'type_of_request',
         'request_date',
+        'cost',
         'pupil'
         )
+    list_totals = [
+        ('cost', lambda field: Coalesce(Sum(field), 0)),
+        ('cost', Avg)]
     ordering = ['date_request']
-    actions = ['approve_request', 'deny_lack_notice', 'deny_unavailable']
+    actions = [
+        'approve_add_breakfast',
+        'approve_add_supper',
+        'approve_cancel_breakfast',
+        'approve_cancel_supper',
+        'deny_lack_notice',
+        'deny_unavailable',
+        'calculate_amount_owed']
     list_filter = (
         'approval_status',
         'pupil'
     )
 
-    def approve_request(self, request, queryset):
+    def approve_add_breakfast(self, request, queryset):
         queryset.update(approval_status=1)
+        queryset.update(cost='2')
+
+    def approve_add_supper(self, request, queryset):
+        queryset.update(approval_status=1)
+        queryset.update(cost='2.50')
+
+    def approve_cancel_breakfast(self, request, queryset):
+        queryset.update(approval_status=1)
+        queryset.update(cost='-2')
+
+    def approve_cancel_supper(self, request, queryset):
+        queryset.update(approval_status=1)
+        queryset.update(cost='-2.50')
 
     def deny_lack_notice(self, request, queryset):
         queryset.update(
             approval_status=3,
         )
+        queryset.update(cost='0')
 
     def deny_unavailable(self, request, queryset):
-        queryset.update(
-            approval_status=2,
-        )
+        queryset.update(approval_status=2)
+        queryset.update(cost='0')
+
+    def calculate_amount_owed(self, request, queryset):
+        total_due = DateRequest.objects.aggregate(Sum('cost'))
+        print(total_due)
+        print("totale due")
+        # queryset.update(
+        #     pupil.amount_owed == total_due,
+        # )

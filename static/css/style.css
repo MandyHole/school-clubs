@@ -28,6 +28,17 @@ label.form-check-label {
     margin-bottom: 15px;
 }
 
+.form-check-input.is-invalid~.form-check-label, .was-validated .form-check-input:invalid~.form-check-label {
+    padding: 1%;
+    background-color: antiquewhite;
+    font-weight: 600;
+}
+
+.invalid-feedback {
+    background-color: antiquewhite;
+    padding: 1%;
+}
+
 /* hero styles */
 
 .hero-header-big {
