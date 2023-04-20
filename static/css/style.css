@@ -360,19 +360,24 @@ li>a:hover{
 }
 
 .modal-confirm .btn-secondary {
-	background: #c1c1c1;
+	background: #56a0d8;
+    color: #000;
 }
 
 .modal-confirm .btn-secondary:hover, .modal-confirm .btn-secondary:focus {
-	background: #a8a8a8;
+    background-color: #be9f56;
+    color: #000;
 }
 
 .modal-confirm .btn-danger {
-	background: #56a0d8;
+	background: #003e6b;
+    color:#fff;
 }
 
 .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
-	background: #003e6b
+    background-color: #be9f56;
+    color: #000;
+    
 }
 
 /* footer styles */
