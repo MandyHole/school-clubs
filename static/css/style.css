@@ -1,4 +1,4 @@
-/* html elements */
+/* core html elements */
 
 body {
     font-family: 'Quattrocento', serif;
@@ -6,7 +6,6 @@ body {
 }
 
 h2 {
-    font-family: 'Quattrocento', serif;
     font-weight: 700;
     color: #fff;
     text-align: center;

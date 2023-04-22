@@ -3,47 +3,53 @@
 <!-- Hero Area -->
 
 
-{% block hero%}  {% if user.is_authenticated %}<div class="hero-add-child hero-header hero-image"> {% else %}<div class="hero-add-child hero-full hero-image">{% endif %}
-  {% endblock %}
+{% block hero%} {% if user.is_authenticated %}<div class="hero-add-child hero-header hero-image"> {% else %}<div
+    class="hero-add-child hero-full hero-image">{% endif %}
+    {% endblock %}
 
-  {% block content %}
-  {% load crispy_forms_tags %}
-  <div class="container">
-    <div class="row">
-      <div class="col hero-text-position">
-        {% if user.is_authenticated %}
-        <h1 class="white-text large-text">Add a Child</h1>
-        {% else %}
-        <h1 class="white-text large-text">Please login to add a pupil</h1>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
+    {% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+      <div class="row">
+        <div class="col hero-text-position">
+          <!-- Heading only shows if user is loged in -->
+          {% if user.is_authenticated %}
+          <h1 class="white-text large-text">Add a Child</h1>
+          {% else %}
+          <!-- Only content that shows if the user isn't logged in -->
+          <h1 class="white-text large-text">Please login to add a pupil</h1>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn navy-btn" role="button" href="{% url 'account_login' %}" aria-label="login">Login</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main body area -->
+  <div class="gold-background">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Intro/form only shows if user is loged in -->
+        {% if user.is_authenticated%}
+        <div class="col-md-6 offset-md-3 box-heading-background">
+          <p>Use this form to tell us about a child who would like to attend a breakfast or supper club who has not
+            already booked via this website. You can sign them up for regular slots using this page, but please note
+            that
+            any one-off requests need to be made once you have submitted your child's details here.
+          </p>
+          <p><strong><em>Please note that you must tick to confirm you understand the fees to successfully submit the
+                form.</em></strong></p>
+          <form method="post">
+            <!-- form  -->
+            {{ add_pupil_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn gold-btn btn-lg" aria-label="submit">Submit</button>
+          </form>
         </div>
         {% endif %}
       </div>
     </div>
   </div>
-</div>
-
-<!-- Main body area -->
-<div class="gold-background">
-  <div class="container-fluid">
-    <div class="row">
-      {% if user.is_authenticated%}
-      <div class="col-md-6 offset-md-3 box-heading-background">
-        <p>Use this form to tell us about a child who would like to attend a breakfast or supper club who has not
-          already booked via this website. You can sign them up for regular slots using this page, but please note that
-          any one-off requests need to be made once you have submitted your child's details here. 
-        </p>
-      <p><strong><em>Please note that you must tick to confirm you understand the fees to successfully submit the form.</em></strong></p>
-        <form method="post">
-          <!-- | crispy  -->
-          {{ add_pupil_form | crispy }}
-          {% csrf_token %}
-          <button type="submit" class="btn gold-btn btn-lg">Submit</button>
-        </form>
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</div>
-{% endblock %}
+  {% endblock %}

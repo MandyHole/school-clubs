@@ -15,7 +15,7 @@
         {% else %}
         <h1 class="white-text large-text">Please login to see this page</h1>
         <div class="d-grid gap-2 col-6 mx-auto">
-          <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
+          <a class="btn navy-btn" role="button" href="{% url 'account_login' %}" aria-label="login">Login</a>
         </div>
         {% endif %}
       </div>
@@ -37,7 +37,7 @@
           <div class="card-body">
             <h2 class="pupil-title">{{ pupil.first_name_of_pupil }} {{ pupil.surname_of_pupil }},
               {{ pupil.get_year_gp_display }}</h2>
-              <p class="center-align-text">Booking Status: {{ pupil.get_booking_approval_status_display }}</p>
+            <p class="center-align-text">Booking Status: {{ pupil.get_booking_approval_status_display }}</p>
             {% if pupil.b_mon == True or pupil.b_tues == True or pupil.b_wed == True or pupil.b_thurs == True or pupil.b_fri == True %}
             <h6 class="card-subtitle mb-2"><strong>Regular Breakfast Slots: </strong></h6>
             <ul>
@@ -59,7 +59,7 @@
               {% if pupil.s_fri == True %} <li>Friday</li>{% endif %}
             </ul>
             {% else %}
-              <h6><em>No supper slots booked</em></h6>
+            <h6><em>No supper slots booked</em></h6>
             {% endif %}
             <h6><strong>Any Additional Requests</strong><span class="applicable"> (if applicable)</span><strong>
                 :</strong></h6>
@@ -68,10 +68,12 @@
               {% for date_request in date_requests %}
               {% if date_request.pupil == pupil %} <li>{{ date_request.date_request }}
                 ({{ date_request.get_type_of_request_display }}): {{ date_request.get_approval_status_display }}</li>
-                <!-- Opportunity to delete request if not yet approved by admin (Modal to approve deletion)-->
-              {% if date_request.approval_status == '0' %} <a href="#deleteDateModal{{ date_request.id }}" data-toggle="modal">
-                <button class="navy-btn-small">Cancel this request </button>
+              <!-- Opportunity to delete request if not yet approved by admin (Modal to approve deletion)-->
+              {% if date_request.approval_status == '0' %} <a href="#deleteDateModal{{ date_request.id }}"
+                data-toggle="modal">
+                <button class="navy-btn-small" aria-label="cancel this request">Cancel this request </button>
               </a>
+              <!-- modal code -->
               <div id="deleteDateModal{{ date_request.id }}" class="modal fade">
                 <div class="modal-dialog modal-confirm">
                   <div class="modal-content">
@@ -87,9 +89,10 @@
                         to make a new request.</p>
                     </div>
                     <div class="modal-footer justify-content-center">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                      <a href="/delete_date/{{ date_request.id }}"><button type="button"
-                          class="btn btn-danger">Delete</button></a>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        aria-label="cancel">Cancel</button>
+                      <a href="/delete_date/{{ date_request.id }}"><button type="button" class="btn btn-danger"
+                          aria-label="delete">Delete</button></a>
                     </div>
                   </div>
                 </div>
@@ -99,9 +102,9 @@
               {% endfor %}
             </ul>
             <!-- Buttons to edit pupil's regular sessions / make a date request for pupil -->
-            <p class="card-text"> <a href="/amend_pupil/{{ pupil.id }}">
+            <p class="card-text"> <a href="/amend_pupil/{{ pupil.id }}" aria-label="edit slots/contact details">
                 <button class="navy-btn">Edit regular slots/contact details</button>
-                <a href="/date_request/{{ pupil.id }}">
+                <a href="/date_request/{{ pupil.id }}" aria-label="make a date request">
                   <button class="navy-btn">Make one-off date request</button>
                 </a>
             </p>

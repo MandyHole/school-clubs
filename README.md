@@ -5,41 +5,47 @@ This responsive website is designed based on requirements of a particular indepe
 
 For the purpose of this project, all references to the name of the school have been removed although their overall branding has been used. In a real-world scenario, the school’s logo would be used in the main menu to reassure the users that it is a legitimate website and their contact details would be on the website.
 
-Link to deployed site: https://school-clubs.herokuapp.com/
+Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new" aria-label="Deployed School CLubs website">https://school-clubs.herokuapp.com/</a>
 
 <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1681989521/sampleviews_smx7zw.png" width = 95% alt="Sample views of School Clubs website"></a>
 
 ## Contents
-<a href="#UX" alt="Jump to User Experience">User Experience</a>
+<a href="#UX" aria-label="Jump to User Experience">User Experience</a>
 <ul>
-<li><a href="#stories" alt="Jump to User Exeperience: User Stories">User Stories</a></li>
-<li><a href="#design" alt="Jump to User Exeperience: Design">Design (typography, colour and imagery)</a></li>
-<li><a href="#wireframes" alt="Jump to User Exeperience: Wireframes">Wireframes</a></li></ul>
-<p><a href="#features" alt="Jump to Features">Key Features</a></p>
-<p><a href="#technologies" alt="Jump to Technologies">Technologies Used</a></p>
+<li><a href="#stories" aria-label="Jump to User Exeperience: User Stories">User Stories</a></li>
+<li><a href="#design" aria-label="Jump to User Exeperience: Design">Design (typography, colour and imagery)</a></li>
+<li><a href="#wireframes" aria-label="Jump to User Exeperience: Wireframes">Wireframes</a></li></ul>
+<p><a href="#features" aria-label="Jump to Features">Key Features</a></p>
+<p><a href="#technologies" aria-label="Jump to Technologies">Technologies Used</a></p>
 <ul>
-<li><a href="#languages" alt="Jump to Technologies: Languages Used">Languages Used</a></li>
-<li><a href="#frameworks" alt="Jump to Technologies: Frameworks, Programmes and Libraries">Frameworks, Programmes and Libraries</a></li>
+<li><a href="#languages" aria-label="Jump to Technologies: Languages Used">Languages Used</a></li>
+<li><a href="#frameworks" aria-label="Jump to Technologies: Frameworks, Programmes and Libraries">Frameworks, Programmes and Libraries</a></li>
 </ul>
-<p><a href="#testing" alt="Jump to Testing">Testing</a></p>
+<p><a href="#testing" aria-label="Jump to Testing">Testing</a></p>
 <ul>
-<li><a href="#html" alt="Jump to Testing: HTML">HTML</a></li>
-<li><a href="#css" alt="Jump to Testing: CSS">CSS</a></li>
-<li><a href="#java" alt="Jump to Testing: Javascript">Javascript</a></li>
-<li><a href="#python" alt="Jump to Testing: Python">Python</a></li>
-<li><a href="#contrast" alt="Jump to Testing: Colour Contrast">Colour Contrast</a></li>
-<li><a href="#UX-test" alt="Jump to Testing: User Experience">User Story: Experience Testing</a></li>
-<li><a href="#feature-test" alt="Jump to Testing: Feature Testing">Feature Testing</a></li>
-<li><a href="#further-testing" alt="Jump to Testing: Feature Testing">Further Testing</a></li>
-<li><a href="#fixed-bugs" alt="Jump to Testing: Fixed bugs">Fixed bugs</a></li>
-<li><a href="#known-bugs" alt="Jump to Testing: Known bugs">Known bugs</a></li>
+<li><a href="#html" aria-label="Jump to Testing: HTML">HTML</a></li>
+<li><a href="#css" aria-label="Jump to Testing: CSS">CSS</a></li>
+<li><a href="#java" aria-label="Jump to Testing: Javascript">Javascript</a></li>
+<li><a href="#lighthouse" aria-label="Jump to Testing: Lighthouse">Lighthouse</a></li>
+<li><a href="#python" aria-label="Jump to Testing: Python">Python</a></li>
+<li><a href="#contrast" aria-label="Jump to Testing: Colour Contrast">Colour Contrast</a></li>
+<li><a href="#UX-test" aria-label="Jump to Testing: User Experience">User Story: Experience Testing</a></li>
+<li><a href="#feature-test" aria-label="Jump to Testing: Feature Testing">Feature Testing</a></li>
+<li><a href="#further-testing" aria-label="Jump to Testing: Feature Testing">Further Testing</a></li>
+<li><a href="#fixed-bugs" aria-label="Jump to Testing: Fixed bugs">Fixed bugs</a></li>
+<li><a href="#known-bugs" aria-label="Jump to Testing: Known bugs">Known bugs</a></li>
 </ul>
-<p><a href="#deploy" alt="Jump to Deployment and Local Development">Deployment and Local Development</a></p>
+<p><a href="#deploy" aria-label="Jump to Deployment and Local Development">Deployment and Local Development</a></p>
 <ul>
-<li><a href="#deployment" alt="Jump to Deployment">Deployment</a></li>
-<li><a href="#fork" alt="Jump to How to fork the repo">How to fork the repo</a></li>
-<li><a href="#clone" alt="Jump to How to clone the repo">How to clone the repo</a></li>
-
+<li><a href="#deployment" aria-label="Jump to Deployment">Deployment</a></li>
+<li><a href="#fork" aria-label="Jump to How to fork the repo">How to fork the repo</a></li>
+<li><a href="#clone" aria-label="Jump to How to clone the repo">How to clone the repo</a></li>
+</ul>
+<p><a href="#credits" aria-label="Jump to Credits">Credits</a></p>
+<ul>
+<li><a href="#code" aria-label="Jump to Credits - Code">Code</a></li>
+<li><a href="#content" aria-label="Jump to Credits - Content">Content</a></li>
+<li><a href="#media" aria-label="Jump to Credits - Media">Media</a></li>
 </ul>
 
 
@@ -70,10 +76,10 @@ Link to deployed site: https://school-clubs.herokuapp.com/
 
 <li id="design"><strong>Design</strong></li>
 <ul><li>Typography</li>
-<ul><li>Quattrocento, a serif font available on Google Font, (used throughout the site) and Rotis Sans Serif, a semi-serif font, (logo only) were chosen based on the brand guidelines of the Independent Prep School that inspired this project. They convey the quality and prestige provided by the school, which (whilst historic) still embraces modern ideas.</li></ul>
+<ul><li>Quattrocento, a serif font available on Google Font, (used throughout the site) and Rotis Sans Serif, a semi-serif font, (logo only) were chosen based on the brand guidelines of the Independent Prep School that inspired this project. They convey the quality and prestige provided by the school, which (whilst historic) still embraces modern ideas. By following the brand guidelines of the school used on their other sites, it reassures users of authenticity.</li></ul>
 <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1681990321/text_sample_cyv8xj.png" width = 75% alt="Examples of fonts used"></a>
 <li>Colour Scheme</li>
-<ul><li>The colours were chosen based off of brand guidelines of the Independent School who inspired this project. Again, these specific colours were chosen to convey the quality and prestige the historic yet modern school has to offer.</li>
+<ul><li>The colours were chosen based off of brand guidelines of the Independent School who inspired this project. Again, these specific colours were chosen to convey the quality and prestige the historic yet modern school has to offer and by following the brand guidelines of the school used on their other sites, it reassures users of authenticity.</li>
 </ul>
 <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1681990075/colour-usage_yfosyw.png" width = 25% alt="Examples of colours used"></a>
 
@@ -109,7 +115,7 @@ Link to deployed site: https://school-clubs.herokuapp.com/
 <li>Python</li>
 </ul>
 
-<h3 id="frameworks"> Frameworks, Libraries & Programs Used</h3>
+<h3 id="frameworks"> Frameworks, Libraries & Programmes Used</h3>
 <ul>
 <li><strong>Bootstrap 5.0:</strong> used to assist with the responsiveness and styling of the website.</li>
 <li><strong>J Query:</strong> used alongside Bootstrap.</li>
@@ -122,13 +128,13 @@ Link to deployed site: https://school-clubs.herokuapp.com/
 <li><strong>Adobe Illustrator:</strong> used to create the logo.</li>
 <li><strong>Django:</strong> used to help make the website more quickly and with less code.</li>
 <li><strong>Cloudinary:</strong> used to store photographs for the project</li>
-<li><strong>ICO Converter:</strong> used to create a favicon from an image created in Illustrator https://www.icoconverter.com/</li>
+<li><strong>ICO Converter:</strong> used to create a favicon from an image created in Illustrator <a href="https://www.icoconverter.com/" aria-label="ICO Converter website" target="new">ICO Converter website</a></li>
 <li><strong>ElephantSQL:</strong> used to host the database</li>
 </ul>
 
 ## Testing
 
-<p id="html"><strong>HTML:</strong> Tested the following pages with W3C Markup Validator (no errors found although I initially had some errors due to location of div elements in relation to python if / for statements, which I subsequently modified)</p>
+<p id="html"><strong>HTML:</strong> Tested the following pages with <a href="https://validator.w3.org/" target="new" aria-label="W3C Markup Validator website">W3C Markup Validator</a> (I initially had some errors due to location of div elements in relation to python if / for statements, which I subsequently modified so they now pass)</p>
 <ul>
 <li>account/login.html</li>
 <li>account/signup.html</li>
@@ -140,9 +146,9 @@ Link to deployed site: https://school-clubs.herokuapp.com/
 <li>manage_bookings.html</li>
 </ul>
 
-<p id="css"><strong>CSS:</strong> Tested static/css/style.css with W3C CSS Validator using the direct input method (no errors found) https://jigsaw.w3.org/css-validator/</p>
+<p id="css"><strong>CSS:</strong> Tested static/css/style.css with <a href="https://jigsaw.w3.org/css-validator/" aria-label="W3C CSS Validator" target="new"> W3C CSS Validator</a> using the direct input method (no errors found) </p>
 
-<p id="java"><strong>Javascript:</strong> Tested static/javascript/script.js with https://jshint.com/ (no errors found)</p>
+<p id="java"><strong>Javascript:</strong> Tested static/javascript/script.js with <a href="https://jshint.com/" target="new" aria-label="jshint website">Jshint website</a> (no errors found)</p>
 
 <p id="python"><strong>Python:</strong> Tested the pages I created/used with Pycode Style (no errors found). See steps below:</p>
 <ul><li>In the terminal, check you have pycodestyle installed by running: pip install pycodestyle</li>
@@ -155,7 +161,11 @@ Link to deployed site: https://school-clubs.herokuapp.com/
 <li>pycodestyle --first schoolclubs/settings.py (Please note that some pre-existing code from Django on settings.py failed due to line length, but all code that I added passed)</li></ul>
 </ul>
 
-<p id="contrast"><strong>Colour contrast:</strong> Tested using https://webaim.org/resources/contrastchecker/</p>
+<p id="lighthouse"><strong>Lighthouse:</strong> Overall good although I'd recommened exploring the performance recommendations in a future release, but left for now due to time constraints</p>
+<img 
+              src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682160626/Screenshot_2023-04-22_at_11.00.42_qrlqxz.png" width = 25% alt="Lighthouse report"></a>
+
+<p id="contrast"><strong>Colour contrast:</strong> Tested using <a href="https://webaim.org/resources/contrastchecker/" target="new" aria-label="Webaim Contrast Checker Website">Webaim Contrast Checker Website</a></p>
 <ul><li>#be9f56 (gold) passed with black on gold / vice versa</li>
 <li>#003e6b (navy) passed with white on navy / vice versa</li>
 <li>#56a0d8(light blue) passed with black / vice versa</li>
@@ -170,20 +180,21 @@ Link to deployed site: https://school-clubs.herokuapp.com/
 | :--- | :--- | :--- |
 | `Site Users` |
 |  |  |  |
-| Account facility to add/view/amend bookings | If a user isn't currently signed in, they are given very limited options as to what they are able to do when they get to the homepage (either sign in or sign up) so that they are aware that they can create an account. Once signed in, they have two other options: Add a child or manage bookings so they can easily see by the buttons/menu that they have the facility to add and amend bookings | :--- |
-| Block bookings for specified days | When adding a child, users have the option to tick which session(s) they'd like the child to have each week (for example, Breakfast on Mondays and Supper on Tuesdays) rather than requesting a series of dates. | :--- |
-| Add/amend contact details | Users aren't asked to provide an email when initially adding a child as the information is pulled from their user login information. However, they have the option to update their email when they amend their child in case it changes in future. They can also add/amend a contact number when adding/amending a child. | :--- |
-| Automatic updates for child's year | Admininstrators can make the Year Group go up a year in the admin panel (using the pupil model) by selecting all pupils and using the action "Advance year". After Year 6, the clubs would no longer be available so those pupils' records would be deleted during the advancement process. I didn't give users the ability to amend a pupil's year as it isn't something that would need to be changed apart from during the summer when the admins will run the action. By allowing users this ability, there would be a risk that parents would advance it in the summer before the admins had a chance, which would then make it inaccurate when the admin ran the function. | :--- |
-| Past dates to automatically disappear from the booking option | The date request form has been designed using a date picker that defaults to the current date. Should they select a date that is in the past or doesn't give the 48 hours required notice, the admins will have the opportunity to deny the request based on insufficient notice. Once the term has ended, admins would delete all the requested dates for that term. | :--- |
-| Know approval status for bookings | Messages appear that show when a form is successfully submitted. On the "Manage Booking" page, you can see the status of any requests and whether they are pending approval, declined (with a reason) or approved. Admins should review requests at a set time each workday to approve/deny in a timely manner. | :--- |
+| Account facility to add/view/amend bookings | If a user isn't currently signed in, they are given very limited options as to what they are able to do when they get to the homepage (either sign in or sign up) so that they are aware that they can create an account. Once signed in, they have two other options: Add a child or manage bookings so they can easily see by the buttons/menu that they have the facility to add and amend bookings | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682152659/Screenshot_2023-04-22_at_09.34.14_pupfzq.png" alt="Screenshot of account facility"> |
+| Block bookings for specified days | When adding a child, users have the option to tick which session(s) they'd like the child to have each week (for example, Breakfast on Mondays and Supper on Tuesdays) rather than requesting a series of dates. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682152737/Screenshot_2023-04-22_at_09.38.46_sexpvi.png" alt="Screenshot of block bookings facility"> |
+| Add/amend contact details | Users aren't asked to provide an email when initially adding a child as the information is pulled from their user login information (they are required to add an email when creating an account). However, they have the option to update their email when they amend their child in case it changes in future. They can also add/amend a contact number when adding/amending a child. Both are required fields| <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682153110/contact_h7fcxj.png" alt="Screenshot of amending contact details"> 
+|
+| Automatic updates for child's year | Admininstrators can make the Year Group go up a year in the admin panel (using the pupil model) by selecting all pupils and using the action "Advance year". After Year 6, the clubs would no longer be available so those pupils' records would be deleted during the advancement process. I didn't give users the ability to amend a pupil's year as it isn't something that would need to be changed apart from during the summer when the admins will run the action. By allowing users this ability, there would be a risk that parents would advance it in the summer before the admins had a chance, which would then make it inaccurate when the admin ran the function. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682153592/advance-year_r0ikqi.png" alt="Screenshot of amending contact details">  |
+| Past dates to automatically disappear from the booking option | The date request form has been designed using a date picker that defaults to the current date. Should they select a date that is in the past or doesn't give the 48 hours required notice, the admins will have the opportunity to deny the request based on insufficient notice. Once the term has ended, admins would delete all the requested dates for that term. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682154766/approve-request_bpy9ru.png" alt="Screenshot of date picker and admin response">  |
+| Know approval status for bookings | Messages appear that show when a form is successfully submitted. On the "Manage Booking" page, you can see the status of any requests and whether they are pending approval, declined (with a reason) or approved. Admins should review requests at a set time each workday to approve/deny in a timely manner. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682154837/Screenshot_2023-04-22_at_10.12.23_qnuie6.png" alt="Screenshot of date approval status"> |
 |`Site Admins`|
 |  |  |  |
-| See who has signed up to attend a session| In the admin area, under the Date Request model, admins can order the list based on the date of the request to see if there are any approved cancellations/additional date requests for any particular date. That, in conjunction with the regular attendees, which can be found in the pupil model by filtering by session, will provide all of the pupils who should be at a particular session. In an ideal world, this would be streamlined better and cause less administrative work. | :--- |
-| Move pupils up a Year Group / keep records accurate | Admininstrators can make the Year Group go up a year in the admin panel (using the pupil model) by selecting all pupils and using the action "Advance year". After Year 6, the clubs would no longer be available so those pupils' records would be deleted during the advancement process. I didn't give users the ability to amend a pupil's year as it isn't something that would need to be changed apart from during the summer when the admins will run the action. Giving them the ability would create a risk that parents would advance it in the summer before the admins had a chance. | :--- |
-| Know about amendments | When a user adds / amends their details or requests a one-off request, the approval status is set at either 'Pending Approval' / 'Awaiting Approval' respectively. The admin can use this as a filter and then approve/decline the request as required and update their records for that session. The approval status is conveyed to the user on the "Manage Bookings" page. This system requires admins to regularly check the admin panel and could be improved if they were instead notified by email or an alert (a potential enhancement in future). | :--- |
-|  Add / remove pupil from session | Site Admins can add/remove pupils using the Date Request Model in the admin section of the website. | :--- |
-| Restrict users’ ability to amend a booking: Insufficient notice | Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of insufficient notice. | :--- |
-| Limit the dates booked | Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of unavailable date if the date requested falls on a day when the club isn't running. | :--- |  |
+| See who has signed up to attend a session| In the admin area, under the Date Request model, admins can order the list based on the date of the request to see if there are any approved cancellations/additional date requests for any particular date. That, in conjunction with the regular attendees, which can be found in the pupil model by filtering by session, will provide all of the pupils who should be at a particular session. In an ideal world, this would be streamlined better and cause less administrative work. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682156458/Attendance_lxsvyj.png" alt="Screenshot of accessing attendance">  |
+| Move pupils up a Year Group / keep records accurate | Admininstrators can make the Year Group go up a year in the admin panel (using the pupil model) by selecting all pupils and using the action "Advance year". After Year 6, the clubs would no longer be available so those pupils' records would be deleted during the advancement process. I didn't give users the ability to amend a pupil's year as it isn't something that would need to be changed apart from during the summer when the admins will run the action. Giving them the ability would create a risk that parents would advance it in the summer before the admins had a chance. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682153592/advance-year_r0ikqi.png" alt="Screenshot of amending contact details"> |
+| Know about amendments | When a user adds / amends their details or requests a one-off request, the approval status is set at either 'Pending Approval' / 'Awaiting Approval' respectively. The admin can use these as a filter and then approve/decline the request as required and update their records for that session. The approval status is conveyed to the user on the "Manage Bookings" page. This system requires admins to regularly check the admin panel and could be improved if they were instead notified by email or an alert (a potential enhancement in future). | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682156994/filter-edit_wrjshr.jpg" alt="Screenshot of amending contact details">|
+|  Add / remove pupil from session | Site Admins can add/remove pupils using the Date Request Model in the admin section of the website. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682157232/Screenshot_2023-04-22_at_10.51.53_vruvhg.png" alt="Screenshot of amending contact details">|
+| Restrict users’ ability to amend a booking: Insufficient notice | Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of insufficient notice. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682154837/Screenshot_2023-04-22_at_10.12.23_qnuie6.png" alt="Screenshot of date approval status"> |
+| Limit the dates booked | Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of unavailable date if the date requested falls on a day when the club isn't running. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682154837/Screenshot_2023-04-22_at_10.12.23_qnuie6.png" alt="Screenshot of date approval status"> |  |
 
 
 <h3 id="feature-test">Feature Testing</h3>
@@ -288,20 +299,66 @@ Link to deployed site: https://school-clubs.herokuapp.com/
 | Restricted access | page only available to logged in users | visited /manage_bookings/ when logged out| Only see message "Please login to see this page" and a button to login page | Pass |
 | Login button | Login button takes you to /accounts/login/ | when logged out, I clicked on login button | opens /accounts/login/ | Pass |
 | Content restricted by user | user should only see details of pupils added by them | visited /manage_bookings/ when logged in| Only see pupils associated with the current user | Pass |
+| Page shows pupil's regular and requested slots | user should see their name, Year Group, Booking status and what they have booked | added/updated slots and added date requests | Saw all relevant details for the pupil as expected | Pass |
 | Edit button | Should take to a page to edit details for the pupil named in the same box | Clicked button | Correct edit page appeared | Pass |
 | Request button | Should take to a page to request a specific session change for the pupil named in the same box | Clicked button | Correct date request page appeared | Pass |
-| Cancel button | Should only appear when status is 'Awaiting approval' | Approved request | Cancel button disappeared | Pass |
+| Cancel button | Should only appear when status for a one-off date is 'Awaiting approval' | Approved / Denied requests as an admin | Cancel button disappeared | Pass |
 | Cancel button | Should open modal to confirm deletion | Clicked cancel button | modal appeared | Pass |
 | Modal - Cancel button | Should close modal without deleting request | Clicked cancel button on modal | modal disappeared | Pass |
 | Modal - x button | Should close modal without deleting request | Clicked cancel button on modal | modal disappeared | Pass |
-| Modal - Delete button | Should close modal and delete request | Clicked delete button on modal | modal disappeared and request was gone | Pass |
+| Modal - Delete button | Should close modal and delete relevant request | Clicked delete button on modal | modal disappeared and relevant request was gone | Pass |
+| Modal buttons - hover effect | Should turn gold and black text (if not black already) | Hovered over buttons | buttons turned gold and had black text | Pass |
+| All buttons on page (not modal) - hover effect | All buttons should go to a white background with navy text and a coloured border (the border becomes the same colour as the button in the normal state) when hovered over. | Hover over each button on the page | Each button displayed the correct styling when hovered over | Pass |
+| Responsive Design | The 'hamburger' menu and one column design should appear on smaller screen sizes. | Reduced the width of the screen | Hamburger menu appeared, went to one column | Pass |
 
+`Amend Pupil Page`
 
-| Form validation: confirmation of charges required | Get error | Submitted form correctly apart from ticking confirmation | Saw message " Please confirm you understand the charges" and "This field is required" in red | Pass |
-| Form validation: correct details | Get success message and return to manage bookings with details showing that the booking is pending approval | Submitted form with correct info in full | Automatically redirected to /manage-bookings and saw message "Your child has been added successfully." Newly added info shows message "Booking Status: Pending Approval" | Pass |
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Logo Image | Loads Home page | Clicked logo image | Home page loads | Pass |
+| Home Link in Navbar | Loads Home page | Clicked link | Home page loads | Pass |
+| Add a Child link in Navbar | Takes to a page with a form to add a child | Clicked Add a Child | /add_pupil/ loads | Pass |
+| Manage Bookings link in Navbar | Takes to a page with info on previous bookings | Clicked Manage Bookings | loaded /manage_bookings/ | Pass |
+| Logout link in Navbar | Takes to page to logout | Clicked Logout | Opens /accounts/logout/ | Pass |
+| Restricted access | page content only available to logged in users | visited /amend_pupil/4 when not logged in | Only see message "Login to edit this booking." with a Login button" | Pass |
+| Restricted access | page content only available to logged in users associated with the particular child| visited /amend_pupil/4 when logged in as the wrong user (not admin) | Only see message "You need to login to the correct account before you can edit this booking." | Pass |
+| Login button | Login button takes you to /accounts/login/ | when logged out, I clicked on login button | opens /accounts/login/ | Pass |
+| Content restricted by user | user should only see details of pupils added by them | visited /manage_bookings/ when logged in| Only see pupils associated with the current user | Pass |
+| Error if no pupil found | If the slug doesn't have a current pupil's id, then get a 404 | visited amend_pupil/400 | generates 404 error | Pass |
+| Form validation: required fields aren't blank | Get error | Submitted form without filling in all required fields | Prompted to fill in field(s) | Pass |
+| Form validation: correct details | Get success message and return to manage bookings with details showing that the booking is pending approval | Submitted form with correct info in full | Automatically redirected to /manage-bookings and saw message "Your requested amendments have been received successfully." Newly updated info shows message "Booking Status: Pending Approval" | Pass |
 | Submit button - hover effect | Submit button should go to a white background with navy text and a gold border when hovered over. | Hover over the button on the page | The button displayed the correct styling when hovered over | Pass |
 | Responsive Design | The 'hamburger' menu and one column design should appear on smaller screen sizes. | Reduced the width of the screen | Hamburger menu appeared, went to one column | Pass |
 
+`Date Request Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Logo Image | Loads Home page | Clicked logo image | Home page loads | Pass |
+| Home Link in Navbar | Loads Home page | Clicked link | Home page loads | Pass |
+| Add a Child link in Navbar | Takes to a page with a form to add a child | Clicked Add a Child | /add_pupil/ loads | Pass |
+| Manage Bookings link in Navbar | Takes to a page with info on previous bookings | Clicked Manage Bookings | loaded /manage_bookings/ | Pass |
+| Logout link in Navbar | Takes to page to logout | Clicked Logout | Opens /accounts/logout/ | Pass |
+| Restricted access | page content only available to logged in users | visited /date_request/4 when not logged in | Only see message "Login to make a request." with a Login button" | Pass |
+| Login button | Login button takes you to /accounts/login/ | when logged out, I clicked on login button | opens /accounts/login/ | Pass |
+| Restricted access | page content only available to logged in users associated with the particular child| visited /date_request/5 when logged in as the wrong user (admin) | Only see message "You need to login to the correct account before you can make this request." | Pass |
+| Error if no pupil found | If the slug doesn't have a current pupil's id, then get a 404 | visited date_request/400 | generates 404 error | Pass |
+| Manage Bookings link in form box | Takes to a page with info on previous bookings | Clicked Manage Bookings page | loaded /manage_bookings/ | Pass |
+| Form validation: required fields aren't blank | Get error | Submitted form without filling in all required fields | Prompted to fill in field(s) | Pass |
+| Form validation: date format | Get error | Submitted form without year and tried typing a number higher than 12 in months | returned error / wouldn't allow | Pass |
+| Form validation: correct details | Get success message and return to manage bookings with details showing that the request is pending approval and option to cancel request | Submitted form with correct info in full | Automatically redirected to /manage-bookings and saw message "Your date request has been submitted successfully." Date request in relevant box with Awaiting Approval status and a cancel button | Pass |
+| Submit button - hover effect | Submit button should go to a white background with navy text and a gold border when hovered over. | Hover over the button on the page | The button displayed the correct styling when hovered over | Pass |
+| Responsive Design | The 'hamburger' menu and one column design should appear on smaller screen sizes. | Reduced the width of the screen | Hamburger menu appeared, went to one column | Pass |
+
+
+`Logout Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Logo Image | Loads Home page | Clicked logo image | Home page loads | Pass |
+| Home Link in Navbar | Loads Home page | Clicked link | Home page loads | Pass |
+| Add a Child link in Navbar | Takes to a page with a form to add a child | Clicked Add a Child | /add_pupil/ loads | Pass |
+| Manage Bookings link in Navbar | Takes to a page with info on previous bookings | Clicked Manage Bookings | loaded /manage_bookings/ | Pass |
 
 <h3 id="further-testing">Further Testing</h3>
 The Website was tested on Google Chrome and Safari browsers.
@@ -378,7 +435,7 @@ Inspiration for the project, getting started with Django and in particular for d
 All content was written by the developer.
 
 <h3 id="media"> Media</h3>
-All Images were sourced from Pexels. I'd like to give a particular thanks to the following photographers:</li>
+All Images were sourced from <a href="https://www.pexels.com/" aria-label="Go to Pexels website">Pexels.</a> I'd like to give a particular thanks to the following photographers:</li>
 <ul><li>pexels-alexander-mils-2103949</li>
 <li>pexels-chan-walrus-958545</li>
 <li>pexels-elviss-railijs-bitans-1448665</li>

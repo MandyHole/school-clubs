@@ -6,7 +6,7 @@
   {% block content %}
   <div class="container">
     <div class="row">
-        <!-- Page Heading -->
+      <!-- Page Heading (varies depending on logged in status)-->
       <div class="col hero-text-position">
         {% if user.is_authenticated %}
         <h1 class="white-text large-text">Book a Breakfast and Supper Club</h1>
@@ -15,28 +15,34 @@
         {% endif %}
       </div>
     </div>
-    <!-- Hero Buttons -->
+    <!-- Hero Buttons (vary depending on logged in status)-->
     <div class="container">
       <div class="row">
 
         {% if user.is_authenticated %}
         <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="hide-element-mobile"><a class="btn gold-btn" role="button" href="{% url 'add_new_pupil' %}">Add a child</a>
+          <div class="hide-element-mobile"><a class="btn gold-btn" role="button" href="{% url 'add_new_pupil' %}"
+              aria-label="add a child">Add a
+              child</a>
           </div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="hide-element-mobile"><a class="btn navy-btn" role="button" href="{% url 'get_manage_booking' %}">Manage
+          <div class="hide-element-mobile"><a class="btn navy-btn" role="button" href="{% url 'get_manage_booking' %}"
+              aria-label="manage bookings">Manage
               bookings</a>
           </div>
         </div>
 
         {% else %}
         <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="hide-element-mobile"><a class="btn gold-btn" role="button" href="{% url 'account_signup' %}">Sign Up</a>
+          <div class="hide-element-mobile"><a class="btn gold-btn" role="button" href="{% url 'account_signup' %}"
+              aria-label="sign up">Sign
+              Up</a>
           </div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="hide-element-mobile"><a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
+          <div class="hide-element-mobile"><a class="btn navy-btn" role="button" href="{% url 'account_login' %}"
+              aria-label="login">Login</a>
           </div>
         </div>
 
@@ -64,22 +70,22 @@
           </div>
         </div>
         <div class="row box-body-background">
-
+          <!-- buttons vary depending on logged in status -->
           {% if user.is_authenticated %}
           <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'add_new_pupil' %}"
-              role="button">Add a child</a>
+              role="button" aria-label="add a child">Add a child</a>
           </div>
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'get_manage_booking' %}">Manage
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block"
+              href="{% url 'get_manage_booking' %}" aria-label="manage bookings">Manage
               bookings</a>
           </div>
-
           {% else %}
           <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'account_signup' %}"
-              role="button">Sign
+              role="button" aria-label="sign up">Sign
               up</a>
           </div>
           <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'account_login' %}"
-              role="button">Login</a>
+              role="button" aria-label="login">Login</a>
           </div>
 
           {% endif %}
@@ -98,22 +104,23 @@
           </div>
         </div>
         <div class="row box-body-background">
+          <!-- buttons vary depending on logged in status -->
           {% if user.is_authenticated %}
           <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'add_new_pupil' %}"
-              role="button">Add a child</a>
+              role="button" aria-label="add a child">Add a child</a>
           </div>
-          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'get_manage_booking' %}"
-              role="button">Manage
+          <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block"
+              href="{% url 'get_manage_booking' %}" role="button" aria-label="manage bookings">Manage
               bookings</a>
           </div>
 
           {% else %}
           <div class="col-lg-6"> <a class="btn btn-default btn-lg gold-btn btn-block" href="{% url 'account_signup' %}"
-              role="button">Sign
+              role="button" aria-label="sign up">Sign
               up</a>
           </div>
           <div class="col-lg-6"> <a class="btn btn-default btn-lg navy-btn btn-block" href="{% url 'account_login' %}"
-              role="button">Login</a>
+              role="button" aria-label="login">Login</a>
           </div>
 
           {% endif %}

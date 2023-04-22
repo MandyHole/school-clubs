@@ -2,53 +2,66 @@
 
 <!-- Hero Area  -->
 {% block hero%} {% if user.is_authenticated %}
-{% if pupil.user_info == user %}<div class="hero-edit-child hero-image hero-header-big">{% else %}<div class="hero-edit-child hero-image hero-full">{% endif %} {% else %} <div class="hero-edit-child hero-image hero-full">{% endif %}{% endblock %}
 
-  {% block content %}
-  {% load crispy_forms_tags %}
-  <div class="container">
-    <div class="row">
-      <div class="col hero-text-position">
-        {% if user.is_authenticated %}
-        {% if pupil.user_info == user %}
+<!-- Size of background image varies to fit content depending on if user is logged in and matches pupil info -->
+{% if pupil.user_info == user %}<div class="hero-edit-child hero-image hero-header-big">{% else %}<div
+    class="hero-edit-child hero-image hero-full">{% endif %} {% else %} <div
+      class="hero-edit-child hero-image hero-full">{% endif %}{% endblock %}
 
-        <h1 class="white-text large-text">Update {{ pupil }}'s Regular Bookings</h1>
+      {% block content %}
+      {% load crispy_forms_tags %}
+      <div class="container">
+        <div class="row">
+          <div class="col hero-text-position">
+            <!-- Content varies depending on if logged in and pupil is connected to user -->
+            {% if user.is_authenticated %}
+            {% if pupil.user_info == user %}
 
-        {% else %}
-        <h1 class="white-text large-text">You need to login to the correct account before you can edit this booking.</h1>
+            <!-- Inserted pupil name to ensure user is updating correct child -->
 
-        {% endif %}
-        {% else %}
-        <h1 class="white-text large-text">Login to edit this booking</h1>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <a class="btn navy-btn" role="button" href="{% url 'account_login' %}">Login</a>
+            <h1 class="white-text large-text">Update {{ pupil }}'s Regular Bookings</h1>
+
+            {% else %}
+            <h1 class="white-text large-text">You need to login to the correct account before you can edit this booking.
+            </h1>
+
+            {% endif %}
+            {% else %}
+            <!-- Prompted to login if not already -->
+
+            <h1 class="white-text large-text">Login to edit this booking</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <a class="btn navy-btn" role="button" href="{% url 'account_login' %}" aria-label="login">Login</a>
+            </div>
+          </div>
+          {% endif %}
         </div>
       </div>
-      {% endif %}
+
     </div>
-  </div>
 
-</div>
+    <!-- Body Area -->
 
-<!-- Body Area -->
-{% if user.is_authenticated %}
-{% if pupil.user_info == user %}
-<div class="gold-background">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6 offset-md-3 box-heading-background">
-        <form method="POST">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <p>
-            <button type="submit" class="gold-btn">Update Details</button>
-          </p>
+    <!-- Body area only shows if logged in and pupil is connected to user -->
 
-        </form>
+    {% if user.is_authenticated %}
+    {% if pupil.user_info == user %}
+    <div class="gold-background">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 offset-md-3 box-heading-background">
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <p>
+                <button type="submit" class="gold-btn" aria-label="update details">Update Details</button>
+              </p>
+
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-{% endif %}
-{% endif %}
-{% endblock %}
+    {% endif %}
+    {% endif %}
+    {% endblock %}
