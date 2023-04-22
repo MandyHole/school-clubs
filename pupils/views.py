@@ -74,6 +74,19 @@ def edit_pupil(request, pupil_id):
                 request,
                 'Your requested amendments have been received successfully.')
             return redirect('get_manage_booking')
+        else:
+            messages.error(
+                request,
+                'Please confirm you understand the charges')
+            return render(
+                request,
+                '../templates/amend_pupil.html',
+                {
+                    "form": form,
+                    "pupil": pupil,
+                    "users": users
+                },
+            )
     form = EditPupilForm(instance=pupil)
     context = {
         'form': form,
@@ -90,13 +103,10 @@ def delete_date(request, cancel_id):
 
 
 def date_request(request, pupil_id):
-    pupils = Pupil.objects.all()
-    context = {
-        'pupils': pupils,
-    }
     pupil = get_object_or_404(Pupil, id=pupil_id)
+    users = User.objects.all()
     if request.method == 'POST':
-        date_form = DateRequestForm(request.POST)
+        date_form = DateRequestForm(request.POST, instance=pupil)
         if date_form.is_valid():
             date_form.instance.pupil = pupil
             date_form.save()
@@ -105,13 +115,22 @@ def date_request(request, pupil_id):
                 'Your date request has been submitted successfully.')
             return redirect('get_manage_booking')
         else:
-            messages.warning(
+            messages.error(
                 request,
-                'Please try again with the date in the correct format')
-
+                'Please ensure you confirmed charges and have correct date')
+            return render(
+                request,
+                '../templates/date_request.html',
+                {
+                    "date_form": date_form,
+                    "pupil": pupil,
+                    "users": users
+                },
+            )
     date_form = DateRequestForm(instance=pupil)
     context = {
         'date_form': date_form,
-        'pupil': pupil
+        'pupil': pupil,
+        'users': users
     }
     return render(request, '../templates/date_request.html', context)

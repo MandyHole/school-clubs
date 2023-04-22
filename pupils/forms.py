@@ -45,6 +45,7 @@ class EditPupilForm(forms.ModelForm):
     class Meta:
         model = Pupil
         fields = (
+            'confirmation',
             'parent_contact',
             'contact_email_for_pupil',
             'b_mon',
@@ -58,6 +59,11 @@ class EditPupilForm(forms.ModelForm):
             's_thurs',
             's_fri',
             )
+    def clean_confirmation(self):
+        confirmation = self.cleaned_data.get('confirmation')
+        if confirmation is False:
+            raise forms.ValidationError('This field is required')
+        return confirmation
 
 
 class DateRequestForm(forms.ModelForm):
@@ -67,7 +73,14 @@ class DateRequestForm(forms.ModelForm):
         fields = (
             'date_request',
             'type_of_request',
+            'confirmation',
         )
         widgets = {
             'date_request': DateInput(),
         }
+
+    def clean_confirmation(self):
+        confirmation = self.cleaned_data.get('confirmation')
+        if confirmation is False:
+            raise forms.ValidationError('This field is required')
+        return confirmation

@@ -123,3 +123,7 @@ class DateRequest(models.Model):
         max_digits=5,
         decimal_places=2
     )
+    confirmation = models.BooleanField(
+        verbose_name='I am aware that it costs £2/Breakfast and £2.50/Supper*',
+        default=False
+    )

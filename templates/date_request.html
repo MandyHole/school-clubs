@@ -15,8 +15,8 @@
           <p>Please use this form as many times as you like to let us know of any dates you'd like to add or cancel for
             <strong>{{ pupil }}</strong> (at least 48 hours notice is required). Please see our <a
               href="{% url 'get_manage_booking' %}" aria-label="manage booking page">Manage Booking Page</a> for your
-            previously requested dates and
-            their approval status.</p>
+            previously requested dates and their approval status. If approved, your additional charge or refund will be reflected in
+            your school bill as appropriate.</p>
           <form method="POST">
             {% csrf_token %}
             {{ date_form | crispy }}
