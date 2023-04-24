@@ -59,6 +59,7 @@ class EditPupilForm(forms.ModelForm):
             's_thurs',
             's_fri',
             )
+
     def clean_confirmation(self):
         confirmation = self.cleaned_data.get('confirmation')
         if confirmation is False:

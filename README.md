@@ -13,6 +13,7 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 <a href="#UX" aria-label="Jump to User Experience">User Experience</a>
 <ul>
 <li><a href="#stories" aria-label="Jump to User Exeperience: User Stories">User Stories</a></li>
+<li><a href="#accessibility" aria-label="Jump to User Exeperience: Accessibility">Accessibility</a></li>
 <li><a href="#design" aria-label="Jump to User Exeperience: Design">Design (typography, colour and imagery)</a></li>
 <li><a href="#wireframes" aria-label="Jump to User Exeperience: Wireframes">Wireframes</a></li></ul>
 <p><a href="#features" aria-label="Jump to Features">Key Features</a></p>
@@ -68,14 +69,16 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 <li>As a Site Admin, I would like to be able to add / remove a particular pupil from a club on a specified date so that an approved last minute cancellation or a pupil who showed up without booking can be accounted for.</li>
 <li>As a Site Admin, I would like to restrict users’ ability to amend a booking so that they can only cancel bookings that are more than one day in the future.</li>
 <li>As a Site Admin, I would like to be able to limit the dates so that people can only book dates where the club is available.</li>
+<li>As a Site Admin, I would like users to confirm the cost that is added to their school bill so that they can’t refute the charge later.</li>
 </li>
-</ul>
+</ul></ul></ul>
 
-
-</ul>
-
-<li id="design"><strong>Design</strong></li>
-<ul><li>Typography</li>
+<ul id="accessibility"><li><strong>Accessibility</strong></li>
+<ul><li>Designed to assist users with screenreaders</li><ul><li>Images (not background images) have an alt tag label</li>
+<li>Links have an aria label</li>
+<li>Semantic elements used</li></ul></ul></ul>
+<ul><li id="design"><strong>Design</strong></li></ul>
+<ul><ul><li>Typography</li>
 <ul><li>Quattrocento, a serif font available on Google Font, (used throughout the site) and Rotis Sans Serif, a semi-serif font, (logo only) were chosen based on the brand guidelines of the Independent Prep School that inspired this project. They convey the quality and prestige provided by the school, which (whilst historic) still embraces modern ideas. By following the brand guidelines of the school used on their other sites, it reassures users of authenticity.</li></ul>
 <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1681990321/text_sample_cyv8xj.png" width = 75% alt="Examples of fonts used"></a>
 <li>Colour Scheme</li>
@@ -90,11 +93,11 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 
 <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1681992301/imagery-examples_fhbfp1.png" width = 95% alt="Sample images used in School Clubs website"></a>
 
-<li id="wireframes"><strong>Wireframes</strong></li>
-<ul><li><a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1680528111/Prep-School-homepage-mockup-web_zqbmkw.jpg" aria-label="a wireframe of the desktop homepage" target="new">Mockup of the Homepage (desktop view)</a></li>
-<li><a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1680528326/Prep-School-mockup-mobile2_copy_gvhyxs.jpg" aria-label="a wireframe of the mobile homepage" target="new">Mockup of the Homepage (mobile view)</a></li>
-<li><a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1680528410/Prep-School-form-page_p73el3.jpg" aria-label="a wireframe of a small form (desktop)" target="new">Mockup of a small form (desktop view)</a></li></ul>
-</ul>
+<ul><li id="wireframes"><strong>Wireframes</strong></li>
+<ul><li><a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1680528111/Prep-School-homepage-mockup-web_zqbmkw.jpg" aria-label="a wireframe of the desktop homepage" target="new">Mockup of the Homepage (desktop view)</a> and the <a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682177478/Screenshot_2023-04-22_at_16.31.00_ieqcoe.png" aria-label="screenshot of the desktop version of the homepage" target="new">actual screenshot.</a></li>
+<li><a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1680528326/Prep-School-mockup-mobile2_copy_gvhyxs.jpg" aria-label="a wireframe of the mobile homepage" target="new">Mockup of the Homepage (mobile view)</a> and the <a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682177665/Screenshot_2023-04-22_at_16.32.27_wqpdk2.png" aria-label="a screenshot of the mobile version of the homepage" target="new">actual screenshot.</a></li>
+<li><a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1680528410/Prep-School-form-page_p73el3.jpg" aria-label="a wireframe of a small form (desktop)" target="new">Mockup of a small form (desktop view)</a> and the <a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682177826/Screenshot_2023-04-22_at_16.36.48_c3cis3.png" aria-label="a screenshot of a page with a small form on a desktop" target="new">actual screenshot.</a></li></ul>
+</ul></ul>
 
 <h2 id="features">Key Features</h2>
 <ul>
@@ -102,6 +105,7 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 <li>Login authentication</li>
 <li>Linked to a database that users can amend/delete/create content to</li>
 <li>Admin control panel for superusers</li>
+<li>Accessible for screenreaders</li>
 </ul>
 
 
@@ -194,7 +198,10 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 | Know about amendments | When a user adds / amends their details or requests a one-off request, the approval status is set at either 'Pending Approval' / 'Awaiting Approval' respectively. The admin can use these as a filter and then approve/decline the request as required and update their records for that session. The approval status is conveyed to the user on the "Manage Bookings" page. This system requires admins to regularly check the admin panel and could be improved if they were instead notified by email or an alert (a potential enhancement in future). | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682156994/filter-edit_wrjshr.jpg" alt="Screenshot of amending contact details">|
 |  Add / remove pupil from session | Site Admins can add/remove pupils using the Date Request Model in the admin section of the website. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682157232/Screenshot_2023-04-22_at_10.51.53_vruvhg.png" alt="Screenshot of amending contact details">|
 | Restrict users’ ability to amend a booking: Insufficient notice | Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of insufficient notice. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682154837/Screenshot_2023-04-22_at_10.12.23_qnuie6.png" alt="Screenshot of date approval status"> |
-| Limit the dates booked | Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of unavailable date if the date requested falls on a day when the club isn't running. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682154837/Screenshot_2023-04-22_at_10.12.23_qnuie6.png" alt="Screenshot of date approval status"> |  |
+| Limit the dates booked | Site Admins have the ability to decline/approve any requests that are made. A 'pending' notice will be shown on the Manage Booking page until an admin declines the request, siting a reason of unavailable date if the date requested falls on a day when the club isn't running. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682154837/Screenshot_2023-04-22_at_10.12.23_qnuie6.png" alt="Screenshot of date approval status"> |
+| Costs confirmed before booking | Site Admins know that users will have confirmed they know about the costs for the club before they make a request because the forms cannot be submitted unless the confirmation box is ticked so the fee can't be disputed later. | <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1682173129/cost-confirmation_pu7hkp.jpg" alt="Screenshot of cost confirmation error message"> |
+
+
 
 
 <h3 id="feature-test">Feature Testing</h3>
@@ -326,6 +333,7 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 | Content restricted by user | user should only see details of pupils added by them | visited /manage_bookings/ when logged in| Only see pupils associated with the current user | Pass |
 | Error if no pupil found | If the slug doesn't have a current pupil's id, then get a 404 | visited amend_pupil/400 | generates 404 error | Pass |
 | Form validation: required fields aren't blank | Get error | Submitted form without filling in all required fields | Prompted to fill in field(s) | Pass |
+| Form validation: confirmation of charges required | Get error | Submitted form correctly apart from ticking confirmation | Saw error message and "This field is required" in red | Pass |
 | Form validation: correct details | Get success message and return to manage bookings with details showing that the booking is pending approval | Submitted form with correct info in full | Automatically redirected to /manage-bookings and saw message "Your requested amendments have been received successfully." Newly updated info shows message "Booking Status: Pending Approval" | Pass |
 | Submit button - hover effect | Submit button should go to a white background with navy text and a gold border when hovered over. | Hover over the button on the page | The button displayed the correct styling when hovered over | Pass |
 | Responsive Design | The 'hamburger' menu and one column design should appear on smaller screen sizes. | Reduced the width of the screen | Hamburger menu appeared, went to one column | Pass |
@@ -346,6 +354,7 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 | Manage Bookings link in form box | Takes to a page with info on previous bookings | Clicked Manage Bookings page | loaded /manage_bookings/ | Pass |
 | Form validation: required fields aren't blank | Get error | Submitted form without filling in all required fields | Prompted to fill in field(s) | Pass |
 | Form validation: date format | Get error | Submitted form without year and tried typing a number higher than 12 in months | returned error / wouldn't allow | Pass |
+| Form validation: confirmation of charges required | Get error | Submitted form correctly apart from ticking confirmation | Saw error message and form didn't submit | Pass |
 | Form validation: correct details | Get success message and return to manage bookings with details showing that the request is pending approval and option to cancel request | Submitted form with correct info in full | Automatically redirected to /manage-bookings and saw message "Your date request has been submitted successfully." Date request in relevant box with Awaiting Approval status and a cancel button | Pass |
 | Submit button - hover effect | Submit button should go to a white background with navy text and a gold border when hovered over. | Hover over the button on the page | The button displayed the correct styling when hovered over | Pass |
 | Responsive Design | The 'hamburger' menu and one column design should appear on smaller screen sizes. | Reduced the width of the screen | Hamburger menu appeared, went to one column | Pass |
@@ -360,16 +369,19 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 | Add a Child link in Navbar | Takes to a page with a form to add a child | Clicked Add a Child | /add_pupil/ loads | Pass |
 | Manage Bookings link in Navbar | Takes to a page with info on previous bookings | Clicked Manage Bookings | loaded /manage_bookings/ | Pass |
 
+`Javascript Testing`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Messages disappear after set time | Message disappears without dismissing it | Wait once message appears without clicking to dismiss | Message disappeared | Pass |
+| 'Hamburger' menu changes to X and back | In mobile view, if you open the menu, the 'hamburger' turns into an 'x'. Once closed again, it turns back into a 'hamburger' | Clicked hamburger, opened menu, turned to x; clicked x, closed menu and turned back to hambuger | switched back and forth as expected | Pass |
+
 <h3 id="further-testing">Further Testing</h3>
 The Website was tested on Google Chrome and Safari browsers.
 
-The website was viewed on a variety of devices such as Desktop, Laptop, iPhones and tablets.
+The website was viewed on a variety of devices including Laptop, iPhone, android phone and iPad tablet.
 
-A large amount of testing was done to ensure that all pages were linking correctly.
-
-A large amount of testing was done to ensure that all database additions/updates were working correctly.
-
-A large amount of testing was done to ensure that only users who were logged in had access to certain content. Also, the user had to match the pupil to view/amend personal details.
+Testing was done to ensure that all database additions/updates were working correctly.
 
 Testing was done to ensure that the site deployed by Heroku matched the local version on Gitpod.
 
@@ -381,14 +393,36 @@ The modal to confirm deletion was deleting the wrong record. This was because it
 
 The form to submit the date request would reject dates in an incorrect format without giving the user any feedback as to why their submission didn't work. Adding a date picker put the date in the correct format to make it user friendly and obvious to the user.
 
-<h3 id="known-bugs">Known Bugs</h3>
-<p>On mobile devices, the hamburger/x menu icons move slightly when clicked.</p>
+An incorrectly submitted form would return a blank form instead of keeping the entered details. This was fixed by updating the context to the instance of the form rather than the form itself.
+
+Changing the models resulted in errors as they had already been migrated. I ultimately reset the database by following these steps (with thanks to the Code Institute's Tutor team): 
+<ol>
+<li>Deleted everything in the app's migration folder except the init__.py file.</li>
+<li>Went to the Elephant SQL dashboard, selected the database, and selected the reset button. </li>
+<li>Run the commands 
+<ol><li>python3 manage.py makemigrations </li>
+<li>python3 manage.py migrate</li>
+</ol></li>
+</ol>
+<h3 id="known-bugs">Known Bugs / Areas to Improve</h3>
+
+<p>On mobile devices, the hamburger/x menu icons move slightly when clicked. and on iPhone / portrait iPad, the bottom part of the icon gets slightly cut off. </p>
+
+<p>There is no authentication required (ie email to approve account) when creating an account or facility to request password. A social login would be another area to make this better, but the ideal solution would be to link this with the school's CRM and have a single sign on with their intranet. Due to time constraints and wanting to keep this fictional, I didn't pursue these at this point.</p>
+
+<p>A solution that would enable site users to requests for multiple dates at a time and for changes to be made across multiple children would be more user friendly, but for the scope of this project I kept it simple.</p>
+
+<p>A reporting system that can be generated for each pupil at the end of each term as a type of invoice to be added to the school bill would help administrators lessen their workload. I briefly explored <a href="https://django-import-export.readthedocs.io/en/latest/getting_started.html" target="new" aria-label="Getting started with import/export">exporting records</a> and <a href="https://snyk.io/advisor/python/admin-totals#package-footer" target="new" aria-label="Admin Totals information">totaling data</a>, but neither seemed ideal solutions so I ultimately left it due to time constraints and the scope of the project.</p>
+
+<p>An alert of some sort or an automatically generated email to administrators when someone added a child, made a date request or amended their child's sessions would also help administrators lessen their workload so they don't have to check each date for requests awaiting approval.</p>
+
+<p>Pupils with particularly long surnames may make the text overflow off of hero area on the Amend Pupil page.</p>
 
 
 <h2 id="deploy"> Deployment & Local Development</h2>
 
 <h3 id="deployment">Deployment</h3>
-This project was deployed through Heroku (live link found here: https://school-clubs.herokuapp.com/) using the following steps:
+This project was deployed through Heroku (live link found here: <a href="https://school-clubs.herokuapp.com/" target="new" aria-label="Deployed site">https://school-clubs.herokuapp.com/)</a> using the following steps:
 <ol>
 <li>Login / Sign up to Heroku</li>
 <li>Click New -- Create New App</li>
