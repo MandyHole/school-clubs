@@ -50,14 +50,6 @@ class PupilAdmin(admin.ModelAdmin):
     def approve_booking(self, request, queryset):
         queryset.update(booking_approval_status=1)
 
-    def add_breakfast_fee(self, request, queryset):
-        queryset.update(amount_owed=+2)
-
-    def add_supper_fee(self, request, queryset):
-        # current = self(amount_owed)
-        new_amount = "45.00"
-        queryset.update(amount_owed=45)
-
     def reset_billing_cycle(self, request, queryset):
         queryset.update(amount_owed=0)
 
@@ -115,10 +107,3 @@ class DateRequestAdmin(admin.ModelAdmin):
         queryset.update(approval_status=2)
         queryset.update(cost='0')
 
-    def calculate_amount_owed(self, request, queryset):
-        total_due = DateRequest.objects.aggregate(Sum('cost'))
-        print(total_due)
-        print("totale due")
-        # queryset.update(
-        #     pupil.amount_owed == total_due,
-        # )

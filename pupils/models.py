@@ -113,7 +113,6 @@ class DateRequest(models.Model):
         max_length=2, choices=APPROVAL_CHOICES, default='0')
     type_of_request = models.CharField(
         max_length=2, choices=REQUEST_TYPES)
-    approved = models.BooleanField(null=False, blank=False, default=False)
     request_date = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Date request was made")
