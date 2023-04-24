@@ -106,7 +106,7 @@ def date_request(request, pupil_id):
     pupil = get_object_or_404(Pupil, id=pupil_id)
     users = User.objects.all()
     if request.method == 'POST':
-        date_form = DateRequestForm(request.POST, instance=pupil)
+        date_form = DateRequestForm(request.POST)
         if date_form.is_valid():
             date_form.instance.pupil = pupil
             date_form.save()

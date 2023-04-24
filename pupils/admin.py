@@ -106,4 +106,3 @@ class DateRequestAdmin(admin.ModelAdmin):
     def deny_unavailable(self, request, queryset):
         queryset.update(approval_status=2)
         queryset.update(cost='0')
-
