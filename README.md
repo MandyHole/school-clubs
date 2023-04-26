@@ -140,14 +140,14 @@ Link to deployed site: <a href="https://school-clubs.herokuapp.com/" target="new
 
 <p id="html"><strong>HTML:</strong> Tested the following pages with <a href="https://validator.w3.org/" target="new" aria-label="W3C Markup Validator website">W3C Markup Validator</a> (I initially had some errors due to location of div elements in relation to python if / for statements, which I subsequently modified so they now pass)</p>
 <ul>
-<li>account/login.html</li>
-<li>account/signup.html</li>
-<li>account/logout.html</li>
-<li>add_pupil.html</li>
-<li>amend_pupil.html</li>
-<li>date_request.html</li>
-<li>index.html</li>
-<li>manage_bookings.html</li>
+<li>account/login.html: https://school-clubs.herokuapp.com/accounts/login/</li>
+<li>account/signup.html: https://school-clubs.herokuapp.com/accounts/signup/</li>
+<li>account/logout.html: https://school-clubs.herokuapp.com/accounts/logout/</li>
+<li>add_pupil.html: https://school-clubs.herokuapp.com/add_pupil/</li>
+<li>amend_pupil.html: https://school-clubs.herokuapp.com/amend_pupil/2 (chose pupil at random)</li>
+<li>date_request.html: https://school-clubs.herokuapp.com/date_request/2 (chose request at random)</li>
+<li>index.html: https://school-clubs.herokuapp.com/</li>
+<li>manage_bookings.html: https://school-clubs.herokuapp.com/manage_bookings/</li>
 </ul>
 
 <p id="css"><strong>CSS:</strong> Tested static/css/style.css with <a href="https://jigsaw.w3.org/css-validator/" aria-label="W3C CSS Validator" target="new"> W3C CSS Validator</a> using the direct input method (no errors found) </p>
