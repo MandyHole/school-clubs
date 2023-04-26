@@ -405,7 +405,13 @@ Changing the models resulted in errors as they had already been migrated. I ulti
 </ol>
 <h3 id="known-bugs">Known Bugs / Areas to Improve</h3>
 
+#### Bugs
+
 <p>On mobile devices, the hamburger/x menu icons move slightly when clicked. and on iPhone / portrait iPad, the bottom part of the icon gets slightly cut off. </p>
+
+<p>Pupils with particularly long surnames may make the text overflow off of hero area on the Amend Pupil page.</p>
+
+#### Potential Improvements in Future
 
 <p>There is no authentication required (ie email to approve account) when creating an account or facility to request password. A social login would be another area to make this better, but the ideal solution would be to link this with the school's CRM and have a single sign on with their intranet. Due to time constraints and wanting to keep this fictional, I didn't pursue these at this point.</p>
 
@@ -414,8 +420,6 @@ Changing the models resulted in errors as they had already been migrated. I ulti
 <p>A reporting system that can be generated for each pupil at the end of each term as a type of invoice to be added to the school bill would help administrators lessen their workload. I briefly explored <a href="https://django-import-export.readthedocs.io/en/latest/getting_started.html" target="new" aria-label="Getting started with import/export">exporting records</a> and <a href="https://snyk.io/advisor/python/admin-totals#package-footer" target="new" aria-label="Admin Totals information">totaling data</a>, but neither seemed ideal solutions so I ultimately left it due to time constraints and the scope of the project.</p>
 
 <p>An alert of some sort or an automatically generated email to administrators when someone added a child, made a date request or amended their child's sessions would also help administrators lessen their workload so they don't have to check each date for requests awaiting approval.</p>
-
-<p>Pupils with particularly long surnames may make the text overflow off of hero area on the Amend Pupil page.</p>
 
 
 <h2 id="deploy"> Deployment & Local Development</h2>
